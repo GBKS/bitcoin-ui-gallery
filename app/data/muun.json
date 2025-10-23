@@ -7,7 +7,6 @@
     "Website": "https://muun.com",
     "App Store": "https://apps.apple.com/app/muun-bitcoin-wallet/id1456157963",
     "Google Play": "https://play.google.com/store/apps/details?id=io.muun.apollo",
-    "Twitter": "https://twitter.com/muunwallet",
     "GitHub": "https://github.com/muun"
   },
   "flows": [
@@ -57,6 +56,46 @@
         "emergency-kit-viewer-icloud-file-interface.jpg",
         "taproot-onboarding-setup-complete-success-screen.jpg"
       ]
+    },
+    {
+      "name": "PIN Setup",
+      "screens": [
+        "pin-creation-screen-with-numeric-keypad.jpg",
+        "pin-confirmation-screen-with-three-digits-entered.jpg",
+        "wallet-creation-success-screen-with-astronaut-illustration.jpg"
+      ]
+    },
+    {
+      "name": "Receive",
+      "screens": [
+        "receive-screen-with-notification-prompt-for-bitcoin-payments.jpg",
+        "bitcoin-receive-screen-with-segwit-address-qr-code.jpg",
+        "bitcoin-receive-screen-with-legacy-address-qr-code.jpg",
+        "lightning-receive-screen-with-invoice-qr-code.jpg",
+        "lightning-invoice-details-modal-with-full-invoice-string.jpg"
+      ]
+    },
+    {
+      "name": "Emergency Kit Setup",
+      "screens": [
+        "emergency-kit-intro-screen-explaining-pdf-document.jpg",
+        "emergency-kit-storage-explanation-screen.jpg",
+        "emergency-kit-ownership-explanation-with-creation-button.jpg",
+        "emergency-kit-save-options-screen.jpg",
+        "emergency-kit-save-options-with-cloud-storage-safety-explanation.jpg",
+        "emergency-kit-verification-code-entry-screen.jpg",
+        "verification-code-help-modal-with-location-illustration.jpg",
+        "emergency-kit-verification-success-screen.jpg"
+      ]
+    },
+    {
+      "name": "Lightning Payment",
+      "screens": [
+        "lightning-payment-screen-invoice-14-minutes-remaining.jpg",
+        "lightning-payment-receiving-node-details-modal.jpg",
+        "lightning-payment-invoice-expiring-57-seconds.jpg",
+        "invoice-expired-error-screen.jpg"
+      ]
     }
   ],
   "screens": [
@@ -67,124 +106,153 @@
     },
     {
       "title": "PIN creation screen with numeric keypad",
-      "file": "pin-creation-screen-with-numeric-keypad.jpg"
+      "file": "pin-creation-screen-with-numeric-keypad.jpg",
+      "tags": ["Onboarding", "PIN Setup", "Security"]
     },
     {
-
       "title": "PIN confirmation screen with three digits entered",
-      "file": "pin-confirmation-screen-with-three-digits-entered.jpg"
+      "file": "pin-confirmation-screen-with-three-digits-entered.jpg",
+      "tags": ["Onboarding", "PIN Setup", "Security"]
     },
     {
       "title": "Wallet creation success screen with astronaut illustration",
-      "file": "wallet-creation-success-screen-with-astronaut-illustration.jpg"
+      "file": "wallet-creation-success-screen-with-astronaut-illustration.jpg",
+      "tags": ["Onboarding"]
     },
     {
       "title": "Main wallet screen with zero balance and backup reminder",
-      "file": "main-wallet-screen-with-zero-balance-and-backup-reminder.jpg"
+      "file": "main-wallet-screen-with-zero-balance-and-backup-reminder.jpg",
+      "tags": ["Main Interface", "Backup"]
     },
     {
       "title": "Security Center showing backup options",
-      "file": "security-center-showing-backup-options.jpg"
+      "file": "security-center-showing-backup-options.jpg",
+      "tags": ["Security", "Backup"]
     },
     {
       "title": "Email backup setup screen",
-      "file": "email-backup-setup-screen.jpg"
+      "file": "email-backup-setup-screen.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Email backup confirmation dialog",
-      "file": "email-backup-confirmation-dialog.jpg"
+      "file": "email-backup-confirmation-dialog.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Security Center with email backup skipped",
-      "file": "security-center-with-email-backup-skipped.jpg"
+      "file": "security-center-with-email-backup-skipped.jpg",
+      "tags": ["Security", "Backup"]
     },
     {
       "title": "Alternative backup setup screen with recovery phrase illustration",
-      "file": "alternative-backup-setup-screen-with-recovery-phrase-illustration.jpg"
+      "file": "alternative-backup-setup-screen-with-recovery-phrase-illustration.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Recovery code display screen step 1 of 3",
-      "file": "recovery-code-display-screen-step-1-of-3.jpg"
+      "file": "recovery-code-display-screen-step-1-of-3.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Recovery code confirmation screen step 2 of 3",
-      "file": "recovery-code-confirmation-screen-step-2-of-3.jpg"
+      "file": "recovery-code-confirmation-screen-step-2-of-3.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Recovery code acknowledgment screen step 3 of 3",
-      "file": "recovery-code-acknowledgment-screen-step-3-of-3.jpg"
+      "file": "recovery-code-acknowledgment-screen-step-3-of-3.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Recovery code backup success screen",
-      "file": "recovery-code-backup-success-screen.jpg"
+      "file": "recovery-code-backup-success-screen.jpg",
+      "tags": ["Backup"]
     },
     {
       "title": "Security Center with alternative backup completed",
-      "file": "security-center-with-alternative-backup-completed.jpg"
+      "file": "security-center-with-alternative-backup-completed.jpg",
+      "tags": ["Security", "Backup"]
     },
     {
       "title": "Emergency Kit intro screen explaining PDF document",
-      "file": "emergency-kit-intro-screen-explaining-pdf-document.jpg"
+      "file": "emergency-kit-intro-screen-explaining-pdf-document.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit storage explanation screen",
-      "file": "emergency-kit-storage-explanation-screen.jpg"
+      "file": "emergency-kit-storage-explanation-screen.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit ownership explanation with creation button",
-      "file": "emergency-kit-ownership-explanation-with-creation-button.jpg"
+      "file": "emergency-kit-ownership-explanation-with-creation-button.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit save options screen",
-      "file": "emergency-kit-save-options-screen.jpg"
+      "file": "emergency-kit-save-options-screen.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit save options with cloud storage safety explanation",
-      "file": "emergency-kit-save-options-with-cloud-storage-safety-explanation.jpg"
+      "file": "emergency-kit-save-options-with-cloud-storage-safety-explanation.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit verification code entry screen",
-      "file": "emergency-kit-verification-code-entry-screen.jpg"
+      "file": "emergency-kit-verification-code-entry-screen.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Verification code help modal with location illustration",
-      "file": "verification-code-help-modal-with-location-illustration.jpg"
+      "file": "verification-code-help-modal-with-location-illustration.jpg",
+      "tags": ["Emergency Kit", "Backup", "Help"]
     },
     {
       "title": "Emergency Kit verification success screen",
-      "file": "emergency-kit-verification-success-screen.jpg"
+      "file": "emergency-kit-verification-success-screen.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Security Center with all backups completed",
-      "file": "security-center-with-all-backups-completed.jpg"
+      "file": "security-center-with-all-backups-completed.jpg",
+      "tags": ["Security", "Backup"]
     },
     {
       "title": "Settings screen with general and advanced options",
-      "file": "settings-screen-with-general-and-advanced-options.jpg"
+      "file": "settings-screen-with-general-and-advanced-options.jpg",
+      "tags": ["Settings"]
     },
     {
       "title": "Lightning Network settings with turbo channels enabled",
-      "file": "lightning-network-settings-with-turbo-channels-enabled.jpg"
+      "file": "lightning-network-settings-with-turbo-channels-enabled.jpg",
+      "tags": ["Settings", "Lightning"]
     },
     {
       "title": "Help and feedback screen with support email",
-      "file": "help-and-feedback-screen-with-support-email.jpg"
+      "file": "help-and-feedback-screen-with-support-email.jpg",
+      "tags": ["Help", "Settings"]
     },
     {
       "title": "Empty transactions screen with payment history placeholder",
-      "file": "empty-transactions-screen-with-payment-history-placeholder.jpg"
+      "file": "empty-transactions-screen-with-payment-history-placeholder.jpg",
+      "tags": ["Transaction History", "Main Interface"]
     },
     {
       "title": "Emergency Kit PDF view showing encrypted keys",
-      "file": "emergency-kit-pdf-view-showing-encrypted-keys.jpg"
+      "file": "emergency-kit-pdf-view-showing-encrypted-keys.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit PDF instructions and recovery steps",
-      "file": "emergency-kit-pdf-instructions-and-recovery-steps.jpg"
+      "file": "emergency-kit-pdf-instructions-and-recovery-steps.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Emergency Kit PDF advanced information with output descriptors",
-      "file": "emergency-kit-pdf-advanced-information-with-output-descriptors.jpg"
+      "file": "emergency-kit-pdf-advanced-information-with-output-descriptors.jpg",
+      "tags": ["Emergency Kit", "Backup"]
     },
     {
       "title": "Receive screen with notification prompt for Bitcoin payments",
@@ -193,26 +261,30 @@
     },
     {
       "title": "Bitcoin receive screen with Segwit address QR code",
-      "file": "bitcoin-receive-screen-with-segwit-address-qr-code.jpg"
+      "file": "bitcoin-receive-screen-with-segwit-address-qr-code.jpg",
+      "tags": ["Receive"]
     },
     {
       "title": "Bitcoin receive screen with legacy address QR code",
-      "file": "bitcoin-receive-screen-with-legacy-address-qr-code.jpg"
+      "file": "bitcoin-receive-screen-with-legacy-address-qr-code.jpg",
+      "tags": ["Receive"]
     },
     {
       "title": "Lightning receive screen with invoice QR code",
-      "file": "lightning-receive-screen-with-invoice-qr-code.jpg"
+      "file": "lightning-receive-screen-with-invoice-qr-code.jpg",
+      "tags": ["Receive", "Lightning"]
     },
     {
       "title": "Lightning invoice details modal with full invoice string",
-      "file": "lightning-invoice-details-modal-with-full-invoice-string.jpg"
+      "file": "lightning-invoice-details-modal-with-full-invoice-string.jpg",
+      "tags": ["Receive", "Lightning"]
     },
     {
       "title": "Main wallet screen with hidden balance and Taproot prompt",
       "file": "main-wallet-screen-hidden-balance-taproot-prompt.jpg",
       "os": "iOS",
       "date": "2021-12-09",
-      "tags": ["Taproot", "Onboarding"],
+      "tags": ["Taproot", "Onboarding", "Main Interface"],
       "links": [
         {
           "label": "Muun Taproot Announcement",
@@ -264,7 +336,7 @@
       "file": "update-emergency-kit-cloud-storage-selection.jpg",
       "os": "iOS",
       "date": "2021-12-09",
-      "tags": ["Taproot", "Onboarding"],
+      "tags": ["Taproot", "Onboarding", "Emergency Kit", "Backup"],
       "links": [
         {
           "label": "Muun Taproot Announcement",
@@ -277,7 +349,7 @@
       "file": "verify-emergency-kit-icloud-confirmation.jpg",
       "os": "iOS",
       "date": "2021-12-09",
-      "tags": ["Taproot", "Onboarding"],
+      "tags": ["Taproot", "Onboarding", "Emergency Kit", "Backup"],
       "links": [
         {
           "label": "Muun Taproot Announcement",
@@ -290,7 +362,7 @@
       "file": "emergency-kit-viewer-icloud-file-interface.jpg",
       "os": "iOS",
       "date": "2021-12-09",
-      "tags": ["Taproot", "Onboarding"],
+      "tags": ["Taproot", "Onboarding", "Emergency Kit", "Backup"],
       "links": [
         {
           "label": "Muun Taproot Announcement",
@@ -314,22 +386,26 @@
     {
       "title": "Lightning payment screen with invoice details and 14 minutes remaining",
       "file": "lightning-payment-screen-invoice-14-minutes-remaining.jpg",
-      "date": "2022-01-22"
+      "date": "2022-01-22",
+      "tags": ["Send", "Lightning"]
     },
     {
       "title": "Lightning payment screen showing receiving node details modal",
       "file": "lightning-payment-receiving-node-details-modal.jpg",
-      "date": "2022-01-22"
+      "date": "2022-01-22",
+      "tags": ["Send", "Lightning"]
     },
     {
       "title": "Lightning payment screen with invoice about to expire in 57 seconds",
       "file": "lightning-payment-invoice-expiring-57-seconds.jpg",
-      "date": "2022-01-22"
+      "date": "2022-01-22",
+      "tags": ["Send", "Lightning"]
     },
     {
       "title": "Invoice expired error screen with option to return home",
       "file": "invoice-expired-error-screen.jpg",
-      "date": "2022-01-22"
+      "date": "2022-01-22",
+      "tags": ["Send", "Lightning"]
     }
   ]
 }
