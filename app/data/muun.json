@@ -17,6 +17,12 @@
         "pin-creation-screen-with-numeric-keypad.jpg",
         "pin-confirmation-screen-with-three-digits-entered.jpg",
         "wallet-creation-success-screen-with-astronaut-illustration.jpg"
+      ],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        }
       ]
     },
     {
@@ -42,6 +48,16 @@
         "verification-code-help-modal-with-location-illustration.jpg",
         "emergency-kit-verification-success-screen.jpg",
         "security-center-with-all-backups-completed.jpg"
+      ],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        },
+        {
+          "label": "Emergency recovery - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/emergency-recovery/"
+        }
       ]
     },
     {
@@ -55,6 +71,12 @@
         "verify-emergency-kit-icloud-confirmation.jpg",
         "emergency-kit-viewer-icloud-file-interface.jpg",
         "taproot-onboarding-setup-complete-success-screen.jpg"
+      ],
+      "links": [
+        {
+          "label": "Taproot - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/how-it-works/taproot/"
+        }
       ]
     },
     {
@@ -63,6 +85,12 @@
         "pin-creation-screen-with-numeric-keypad.jpg",
         "pin-confirmation-screen-with-three-digits-entered.jpg",
         "wallet-creation-success-screen-with-astronaut-illustration.jpg"
+      ],
+      "links": [
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
       ]
     },
     {
@@ -73,6 +101,16 @@
         "bitcoin-receive-screen-with-legacy-address-qr-code.jpg",
         "lightning-receive-screen-with-invoice-qr-code.jpg",
         "lightning-invoice-details-modal-with-full-invoice-string.jpg"
+      ],
+      "links": [
+        {
+          "label": "Requesting bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/request/"
+        },
+        {
+          "label": "Payment request formats - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/payment-request-formats/"
+        }
       ]
     },
     {
@@ -86,6 +124,12 @@
         "emergency-kit-verification-code-entry-screen.jpg",
         "verification-code-help-modal-with-location-illustration.jpg",
         "emergency-kit-verification-success-screen.jpg"
+      ],
+      "links": [
+        {
+          "label": "Emergency recovery - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/emergency-recovery/"
+        }
       ]
     },
     {
@@ -95,6 +139,16 @@
         "lightning-payment-receiving-node-details-modal.jpg",
         "lightning-payment-invoice-expiring-57-seconds.jpg",
         "invoice-expired-error-screen.jpg"
+      ],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        },
+        {
+          "label": "Lightning introduction - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/how-it-works/lightning-introduction/"
+        }
       ]
     }
   ],

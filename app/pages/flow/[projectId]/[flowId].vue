@@ -7,6 +7,24 @@
 		/>
 		<p>User flow</p>
 		<h1>{{ flow?.name }}</h1>
+
+		<template v-if="flow.links && flow.links.length > 0">
+			<h2>Resources</h2>
+			<ul>
+				<li
+					v-for="(link, index) in flow.links"
+					:key="index"
+				>
+					<a
+						:href="link.url"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{{ link.label }}
+					</a>
+				</li>
+			</ul>
+		</template>
 	</div>
 
 	<ScreenGrid
@@ -60,6 +78,19 @@ const screens = store.getScreensByFlowId(projectId, flowId)
 			line-height: 1;
 			text-align: center;
 			@include mixins.r('font-size', 40, 48);
+		}
+
+		h2 {
+			margin-top: 20px;
+			font-size: 48px;
+			line-height: 1;
+			text-align: center;
+			@include mixins.r('font-size', 17, 19);
+		}
+
+		ul {
+			margin-top: 5px;
+			text-align: center;
 		}
 	}
 

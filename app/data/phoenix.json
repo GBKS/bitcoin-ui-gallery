@@ -18,6 +18,12 @@
         "03-onboarding-3rd-screen.png",
         "04-onboarding-4th-screen.png",
         "05-after-tapping-create-new-wallet.png"
+      ],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        }
       ]
     },
     {
@@ -26,6 +32,16 @@
         "06-after-tapping-receive.png",
         "07-after-tapping-right-arrow.png",
         "08-after-tapping-copy.png"
+      ],
+      "links": [
+        {
+          "label": "Requesting bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/request/"
+        },
+        {
+          "label": "Payment request formats - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/payment-request-formats/"
+        }
       ]
     },
     {
@@ -36,6 +52,16 @@
         "10a-after-tapping-the-link-icon-on-the-swap-in-wallet-screen.png",
         "10b-after-tapping-configure-fee-settings-on-the-swap-in-wallet-screen.png",
         "10c-after-tapping-show-advanced-options-on-the-channel-management-screen.png"
+      ],
+      "links": [
+        {
+          "label": "Lightning introduction - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/how-it-works/lightning-introduction/"
+        },
+        {
+          "label": "Activity - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/activity/"
+        }
       ]
     },
     {
@@ -46,6 +72,12 @@
         "18-after-tapping-on-icloud-backup.png",
         "19-after-flipping-the-icloud-backup-switch.png",
         "20-showing-icloud-backup-succeeded.png"
+      ],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        }
       ]
     },
     {
@@ -57,6 +89,12 @@
         "26-confirming-addition-of-some-liquidity.png",
         "27-success-screen-liquidity-added.png",
         "28-back-on-main-wallet-screen-after-adding-liquidity.png"
+      ],
+      "links": [
+        {
+          "label": "Lightning liquidity - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/how-it-works/lightning-liquidity/"
+        }
       ]
     },
     {
@@ -66,6 +104,16 @@
         "12-after-tapping-list-icon-on-main-wallet-screen.png",
         "13-after-tapping-lightning-icon-on-main-wallet-screen.png",
         "14-after-tapping-wrench-icon-on-main-wallet-screen.png"
+      ],
+      "links": [
+        {
+          "label": "Wallet home - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/home/"
+        },
+        {
+          "label": "Settings - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/settings/"
+        }
       ]
     }
   ],
@@ -158,7 +206,13 @@
     {
       "title": "15 After tapping send on main wallet screen",
       "file": "15-after-tapping-send-on-main-wallet-screen.png",
-      "tags": ["Send"]
+      "tags": ["Send"],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        }
+      ]
     },
     {
       "title": "16 Main wallet screen after pending transaction confirmed",
@@ -193,7 +247,13 @@
     {
       "title": "21 Main wallet screen after all done",
       "file": "21-main-wallet-screen-after-all-done.png",
-      "tags": ["Main Interface"]
+      "tags": ["Main Interface"],
+      "links": [
+        {
+          "label": "Wallet home - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/home/"
+        }
+      ]
     },
     {
       "title": "22 After tapping transaction history",
