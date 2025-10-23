@@ -147,7 +147,7 @@ const onInputBlur = () => {
 		> .wrap {
 			> .content {
 				input {
-					width: 400px;
+					width: 300px;
 					font-size: 20px;
 					height: 37px;
 					padding: 0 20px 3px 20px;

@@ -5,7 +5,7 @@
 			:project="project"
 			size="large"
 		/>
-		<p>User flow</p>
+		<p><NuxtLink to="/flows">User flow</NuxtLink></p>
 		<h1>{{ flow?.name }}</h1>
 
 		<template v-if="flow.links && flow.links.length > 0">

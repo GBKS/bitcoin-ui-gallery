@@ -51,8 +51,6 @@ export const useSiteStore = defineStore('site', {
           return acc
         }, {})
 
-        console.log('Loaded projects:', this.projects.map(p => p.id))
-
         // Process all screens with project context
         const allScreens = []
         projects.forEach(project => {
@@ -293,6 +291,69 @@ export const useSiteStore = defineStore('site', {
       
       // Return sorted array by flow name
       return matchingFlows.sort((a, b) => a.name.localeCompare(b.name))
+    },
+
+    // Get all unique tags from all screens with usage counts
+    getAllTags: (state) => {
+      const tagStats = new Map()
+      
+      state.allScreens.forEach(screen => {
+        if (screen.tags) {
+          screen.tags.forEach(tag => {
+            if (!tagStats.has(tag)) {
+              tagStats.set(tag, {
+                name: tag,
+                screenCount: 0,
+                projectIds: new Set()
+              })
+            }
+            
+            const stats = tagStats.get(tag)
+            stats.screenCount++
+            stats.projectIds.add(screen.project.id)
+          })
+        }
+      })
+      
+      // Convert to array with final counts and sort by tag name
+      return Array.from(tagStats.values())
+        .map(stats => ({
+          name: stats.name,
+          screenCount: stats.screenCount,
+          projectCount: stats.projectIds.size
+        }))
+        .sort((a, b) => a.name.localeCompare(b.name))
+    },
+
+    // Get all flows from all projects with screen counts
+    getAllFlows: (state) => {
+      const allFlows = []
+      state.projects.forEach(project => {
+        if (project.flows) {
+          project.flows.forEach(flow => {
+            // Convert flow name to URL-friendly slug (lowercase, spaces to dashes)
+            const flowSlug = flow.name.toLowerCase().replace(/\s+/g, '-')
+            
+            // Count screens in this flow
+            const screenCount = flow.screens ? flow.screens.length : 0
+            
+            allFlows.push({
+              ...flow,
+              id: flowSlug,
+              projectId: project.id,
+              screenCount: screenCount,
+              project: {
+                title: project.title,
+                id: project.id,
+                logo: project.logo || null
+              }
+            })
+          })
+        }
+      })
+      
+      // Return sorted array by flow name
+      return allFlows.sort((a, b) => a.name.localeCompare(b.name))
     }
   }
 });

@@ -36,6 +36,7 @@ const screen = store.getScreen(projectId, screenId)
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 30px;
 
 	@include mixins.media-query(small) {
 		

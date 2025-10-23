@@ -1,12 +1,10 @@
 <template>
   <div class="tag-list" v-if="tags && tags.length > 0">
-	<NuxtLink
+	<Tag
 		v-for="(tag, index) in tags"
 		:key="index"
-		:to="`/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`"
-	>
-		#{{ tag }}
-	</NuxtLink>
+		:tag="tag"
+	/>
   </div>
 </template>
 

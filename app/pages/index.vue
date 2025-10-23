@@ -20,7 +20,7 @@ await store.initializeProjectData()
 const visibleScreens = computed(() => {
 	let result = store.allScreens
 
-	// TODO: Search and filtering logic here
+	// TODO: Pagination logic here
 	console.log('visibleScreens', result)
 
 	return result

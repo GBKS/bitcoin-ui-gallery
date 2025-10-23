@@ -19,12 +19,12 @@
 		<p v-if="screen.version">Version: {{ screen.version }}</p>
 
 		<template v-if="screen.tags && screen.tags.length > 0">
-			<h2>Tags</h2>
+			<h2><NuxtLink to="/tags">Tags</NuxtLink></h2>
 			<TagList :tags="screen.tags" />
 		</template>
 
 		<template v-if="flows && flows.length > 0">
-			<h2>Flows</h2>
+			<h2><NuxtLink to="/flows">Flows</NuxtLink></h2>
 			<FlowList :flows="flows" />
 		</template>
 
