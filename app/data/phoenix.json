@@ -1,0 +1,144 @@
+{
+  "title": "Phoenix",
+  "id": "phoenix",
+  "logo": "phoenix.png",
+  "folder": "phoenix",
+  "screens": [
+    {
+      "title": "01 Onboarding 1st screen",
+      "file": "01-onboarding-1st-screen.png"
+    },
+    {
+      "title": "02 Onboarding 2nd screen",
+      "file": "02-onboarding-2nd-screen.png"
+    },
+    {
+      "title": "03 Onboarding 3rd screen",
+      "file": "03-onboarding-3rd-screen.png"
+    },
+    {
+      "title": "04 Onboarding 4th screen",
+      "file": "04-onboarding-4th-screen.png"
+    },
+    {
+      "title": "05 After tapping create new wallet",
+      "file": "05-after-tapping-create-new-wallet.png"
+    },
+    {
+      "title": "06 After tapping receive",
+      "file": "06-after-tapping-receive.png"
+    },
+    {
+      "title": "07 After tapping right arrow",
+      "file": "07-after-tapping-right-arrow.png"
+    },
+    {
+      "title": "08 After tapping copy",
+      "file": "08-after-tapping-copy.png"
+    },
+    {
+      "title": "09 Main wallet screen after sending to this Bitcoin address from external wallet",
+      "file": "09-main-wallet-screen-after-sending-to-this-bitcoin-address-from-external-wallet.png"
+    },
+    {
+      "title": "10 After tapping the pending sats annotation on main wallet screen",
+      "file": "10-after-tapping-the-pending-sats-annotation-on-main-wallet-screen.png"
+    },
+    {
+      "title": "10a After tapping the link icon on the swap in wallet screen",
+      "file": "10a-after-tapping-the-link-icon-on-the-swap-in-wallet-screen.png"
+    },
+    {
+      "title": "10b After tapping configure fee settings on the swap in wallet screen",
+      "file": "10b-after-tapping-configure-fee-settings-on-the-swap-in-wallet-screen.png"
+    },
+    {
+      "title": "10c After tapping show advanced options on the channel management screen",
+      "file": "10c-after-tapping-show-advanced-options-on-the-channel-management-screen.png"
+    },
+    {
+      "title": "11 After tapping settings icon on main wallet screen",
+      "file": "11-after-tapping-settings-icon-on-main-wallet-screen.png"
+    },
+    {
+      "title": "12 After tapping list icon on main wallet screen",
+      "file": "12-after-tapping-list-icon-on-main-wallet-screen.png"
+    },
+    {
+      "title": "13 After tapping lightning icon on main wallet screen",
+      "file": "13-after-tapping-lightning-icon-on-main-wallet-screen.png"
+    },
+    {
+      "title": "14 After tapping wrench icon on main wallet screen",
+      "file": "14-after-tapping-wrench-icon-on-main-wallet-screen.png"
+    },
+    {
+      "title": "15 After tapping send on main wallet screen",
+      "file": "15-after-tapping-send-on-main-wallet-screen.png"
+    },
+    {
+      "title": "16 Main wallet screen after pending transaction confirmed",
+      "file": "16-main-wallet-screen-after-pending-transaction-confirmed.png"
+    },
+    {
+      "title": "17 After tapping the \"backup recovery phrase\" warning message",
+      "file": "17-after-tapping-the-\"backup-recovery-phrase\"-warning-message.png"
+    },
+    {
+      "title": "17a Scrolled down version of 17",
+      "file": "17a-scrolled-down-version-of-17.png"
+    },
+    {
+      "title": "18 After tapping on iCloud backup",
+      "file": "18-after-tapping-on-icloud-backup.png"
+    },
+    {
+      "title": "19 After flipping the iCloud backup switch",
+      "file": "19-after-flipping-the-icloud-backup-switch.png"
+    },
+    {
+      "title": "20 Showing iCloud backup succeeded",
+      "file": "20-showing-icloud-backup-succeeded.png"
+    },
+    {
+      "title": "21 Main wallet screen after all done",
+      "file": "21-main-wallet-screen-after-all-done.png"
+    },
+    {
+      "title": "22 After tapping transaction history",
+      "file": "22-after-tapping-transaction-history.png"
+    },
+    {
+      "title": "23 After tapping add liquidity",
+      "file": "23-after-tapping-add-liquidity.png"
+    },
+    {
+      "title": "24 After tapping estimate liquidity cost",
+      "file": "24-after-tapping-estimate-liquidity-cost.png"
+    },
+    {
+      "title": "25 After tapping the question mark icon",
+      "file": "25-after-tapping-the-question-mark-icon.png"
+    },
+    {
+      "title": "26 Confirming addition of some liquidity",
+      "file": "26-confirming-addition-of-some-liquidity.png"
+    },
+    {
+      "title": "27 Success screen liquidity added",
+      "file": "27-success-screen-liquidity-added.png"
+    },
+    {
+      "title": "28 Back on main wallet screen after adding liquidity",
+      "file": "28-back-on-main-wallet-screen-after-adding-liquidity.png"
+    },
+    {
+      "title": "29 Main wallet screen with balance toggled to USD (via tap)",
+      "file": "29-main-wallet-screen-with-balance-toggled-to-usd-(via-tap).png"
+    },
+    {
+      "title": "30 Main wallet screen with balance toggled to private (via tap)",
+      "file": "30-main-wallet-screen-with-balanced-toggled-to-private-(via-tap).png"
+    }
+  ]
+}

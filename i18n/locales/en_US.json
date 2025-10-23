@@ -1,0 +1,13 @@
+{
+    "general": {
+        "projects": "no projects | 1 project | {count} projects",
+        "tags": "no tags | 1 tag | {count} tags",
+        "screens": "no screens | 1 screen | {count} screens",
+        "flows": "no flows | 1 flow | {count} flows"
+    },
+    "search": {
+        "results": "Search results for \"{query}\"",
+        "placeholder": "Search...",
+        "found": "Found"
+    }
+}
