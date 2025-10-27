@@ -2,7 +2,13 @@
   <div class="page project-page">
 	<template v-if="project">
 		<div class="info">
-			<h1>{{ project.title }}</h1>
+			<h1>
+				<img
+					v-if="project.logo"
+					:src="`/logos/${project.logo}`"
+					alt=""
+				>{{ project.title }}
+			</h1>
 
 			<ProjectDetails :project="project" />
 
@@ -56,6 +62,17 @@ const flows = store.getFlowsByProjectId(projectId)
 		h1 {
 			font-size: 48px;
 			text-align: center;
+			display: flex;
+			align-items: center;
+			gap: 20px;
+
+			img {
+				width: 50px;
+				height: auto;
+				border-radius: 5px;
+				border: 1px solid rgba(var(--frontRGB), 0.1);
+				box-shadow: 0 3px 6px -3px rgba(var(--frontRGB), 0.25);
+			}
 		}
 	}
 

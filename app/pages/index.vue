@@ -1,5 +1,7 @@
 <template>
   <div class="page home-page">
+	<Banner />
+	
 	<ProjectList
 		:projects="store.projects"
 	/>

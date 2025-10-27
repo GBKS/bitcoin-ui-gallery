@@ -1,0 +1,167 @@
+{
+  "title": "OKX",
+  "id": "okx",
+  "logo": "okx.png",
+  "folder": "okx",
+  "links": {
+    "Website": "https://web3.okx.com",
+    "App Store": "https://apps.apple.com/us/app/okx-wallet-portal-to-web3/id6743309484",
+    "Google Play": "https://play.google.com/store/apps/details?id=com.okx.wallet"
+  },
+  "flows": [
+    {
+      "name": "Seed Phrase Backup",
+      "screens": [
+        "main-wallet-screen-with-backup-prompt.png",
+        "enable-cloud-backup-password-creation.png",
+        "secure-wallet-backup-reminder-modal.png",
+        "wallet-backup-information-screen.png",
+        "things-to-remember-seed-phrase-warning-intro.png",
+        "things-to-remember-seed-phrase-sharing-warning.png",
+        "user-responsibility-acknowledgment-for-seed-phrase.png",
+        "note-it-down-seed-phrase-backup-screen.png"
+      ],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        },
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "title": "Seed phrase wallet creation screen with wallet options",
+      "file": "seed-phrase-wallet-creation-screen-with-options.png",
+      "os": "iOS",
+      "tags": ["Onboarding", "Wallet Creation"],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        },
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
+      ]
+    },
+    {
+      "title": "Main wallet screen with backup prompt",
+      "file": "main-wallet-screen-with-backup-prompt.png",
+      "os": "iOS",
+      "tags": ["Main Interface", "Backup"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        }
+      ]
+    },
+    {
+      "title": "Enable cloud backup password creation",
+      "file": "enable-cloud-backup-password-creation.png",
+      "os": "iOS",
+      "tags": ["Backup", "Security"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        }
+      ]
+    },
+    {
+      "title": "Secure wallet backup reminder modal",
+      "file": "secure-wallet-backup-reminder-modal.png",
+      "os": "iOS",
+      "tags": ["Backup", "Security"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        }
+      ]
+    },
+    {
+      "title": "Wallet backup information screen",
+      "file": "wallet-backup-information-screen.png",
+      "os": "iOS",
+      "tags": ["Backup", "Education"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        }
+      ]
+    },
+    {
+      "title": "Things to remember seed phrase warning intro",
+      "file": "things-to-remember-seed-phrase-warning-intro.png",
+      "os": "iOS",
+      "tags": ["Backup", "Education", "Security"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        },
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
+      ]
+    },
+    {
+      "title": "Things to remember seed phrase sharing warning",
+      "file": "things-to-remember-seed-phrase-sharing-warning.png",
+      "os": "iOS",
+      "tags": ["Backup", "Education", "Security"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        },
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
+      ]
+    },
+    {
+      "title": "User responsibility acknowledgment for seed phrase",
+      "file": "user-responsibility-acknowledgment-for-seed-phrase.png",
+      "os": "iOS",
+      "tags": ["Backup", "Education", "Security"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        },
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
+      ]
+    },
+    {
+      "title": "Note it down seed phrase backup screen",
+      "file": "note-it-down-seed-phrase-backup-screen.png",
+      "os": "iOS",
+      "tags": ["Backup", "Security"],
+      "links": [
+        {
+          "label": "Backing up a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/backing-up-a-wallet/"
+        },
+        {
+          "label": "Private key management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/private-key-management/introduction/"
+        }
+      ]
+    }
+  ]
+}
+
