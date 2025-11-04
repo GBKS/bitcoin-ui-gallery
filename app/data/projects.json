@@ -2,6 +2,7 @@
   "projects": [
     "muun",
     "phoenix",
-    "okx"
+    "okx",
+    "padawan"
   ]
 }

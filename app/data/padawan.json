@@ -1,0 +1,305 @@
+{
+  "title": "Padawan",
+  "id": "padawan",
+  "logo": "padawan.png",
+  "folder": "padawan",
+  "os": "Android",
+  "links": {
+    "Website": "https://padawanwallet.com",
+    "Google Play": "https://play.google.com/store/apps/details?id=com.coyotebitcoin.padawanwallet",
+    "GitHub": "https://github.com/thunderbiscuit/padawan-wallet"
+  },
+  "flows": [
+    {
+      "name": "Onboarding",
+      "screens": [
+        "welcome-screen-with-app-introduction.jpg",
+        "learn-by-doing-onboarding-screen.jpg",
+        "level-up-lessons-onboarding-screen.jpg",
+        "wallet-setup-options-screen.jpg"
+      ],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        },
+        {
+          "label": "Creating a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/creating-a-wallet/"
+        }
+      ]
+    },
+    {
+      "name": "Wallet Recovery",
+      "screens": [
+        "recover-wallet-with-12-word-seed-phrase.jpg"
+      ],
+      "links": [
+        {
+          "label": "Restoring a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/restoring-a-wallet/"
+        }
+      ]
+    },
+    {
+      "name": "Getting Test Coins",
+      "screens": [
+        "empty-wallet-with-get-signet-coins-prompt.jpg",
+        "dialog-asking-to-receive-test-bitcoin.jpg",
+        "main-wallet-screen-with-pending-receive-transaction-in-sats.jpg"
+      ],
+      "links": [
+        {
+          "label": "Requesting bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/request/"
+        }
+      ]
+    },
+    {
+      "name": "Send Bitcoin",
+      "screens": [
+        "send-bitcoin-screen-with-insufficient-balance-error.jpg",
+        "send-bitcoin-screen-with-fee-adjustment-slider.jpg",
+        "transaction-confirmation-bottom-sheet.jpg",
+        "transaction-broadcast-success-screen.jpg",
+        "main-wallet-with-pending-send-and-completed-receive-transactions.jpg"
+      ],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        },
+        {
+          "label": "Transaction fees - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/how-it-works/fees/"
+        }
+      ]
+    },
+    {
+      "name": "Learning Journey",
+      "screens": [
+        "learning-journey-screen-with-lesson-categories.jpg",
+        "bitcoin-networks-lesson-content-screen.jpg",
+        "learning-journey-with-completed-first-lesson.jpg"
+      ],
+      "links": [
+        {
+          "label": "Getting started - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/getting-started/"
+        },
+        {
+          "label": "Networks - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/getting-started/technology-primer/#networks"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "title": "Welcome screen with app introduction",
+      "file": "welcome-screen-with-app-introduction.jpg",
+      "tags": ["Onboarding"],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        }
+      ]
+    },
+    {
+      "title": "Learn by doing onboarding screen",
+      "file": "learn-by-doing-onboarding-screen.jpg",
+      "tags": ["Onboarding", "Education"],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        }
+      ]
+    },
+    {
+      "title": "Level up lessons onboarding screen",
+      "file": "level-up-lessons-onboarding-screen.jpg",
+      "tags": ["Onboarding", "Education"],
+      "links": [
+        {
+          "label": "First use - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/first-use/"
+        }
+      ]
+    },
+    {
+      "title": "Wallet setup options screen",
+      "file": "wallet-setup-options-screen.jpg",
+      "tags": ["Onboarding", "Wallet Setup"],
+      "links": [
+        {
+          "label": "Creating a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/creating-a-wallet/"
+        }
+      ]
+    },
+    {
+      "title": "Recover wallet with 12-word seed phrase",
+      "file": "recover-wallet-with-12-word-seed-phrase.jpg",
+      "tags": ["Backup", "Recovery"],
+      "links": [
+        {
+          "label": "Restoring a wallet - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/onboarding/restoring-a-wallet/"
+        }
+      ]
+    },
+    {
+      "title": "Empty wallet with get signet coins prompt",
+      "file": "empty-wallet-with-get-signet-coins-prompt.jpg",
+      "tags": ["Main Interface", "Testnet"],
+      "links": [
+        {
+          "label": "Account management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/account-management/"
+        }
+      ]
+    },
+    {
+      "title": "Dialog asking to receive test bitcoin",
+      "file": "dialog-asking-to-receive-test-bitcoin.jpg",
+      "tags": ["Receive", "Testnet"],
+      "links": [
+        {
+          "label": "Requesting bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/request/"
+        }
+      ]
+    },
+    {
+      "title": "Main wallet screen with pending receive transaction in sats",
+      "file": "main-wallet-screen-with-pending-receive-transaction-in-sats.jpg",
+      "tags": ["Main Interface", "Transaction History"],
+      "links": [
+        {
+          "label": "Account management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/account-management/"
+        }
+      ]
+    },
+    {
+      "title": "Main wallet screen with balance toggled to BTC",
+      "file": "main-wallet-screen-with-balance-toggled-to-btc.jpg",
+      "tags": ["Main Interface", "Units"],
+      "links": [
+        {
+          "label": "Account management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/account-management/"
+        },
+        {
+          "label": "Units & symbols - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/getting-started/units-and-symbols/"
+        }
+      ]
+    },
+    {
+      "title": "Send bitcoin screen with insufficient balance error",
+      "file": "send-bitcoin-screen-with-insufficient-balance-error.jpg",
+      "tags": ["Send", "Error States"],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        }
+      ]
+    },
+    {
+      "title": "Send bitcoin screen with fee adjustment slider",
+      "file": "send-bitcoin-screen-with-fee-adjustment-slider.jpg",
+      "tags": ["Send", "Fees"],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        },
+        {
+          "label": "Transaction fees - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/how-it-works/fees/"
+        }
+      ]
+    },
+    {
+      "title": "Learning journey screen with lesson categories",
+      "file": "learning-journey-screen-with-lesson-categories.jpg",
+      "tags": ["Education", "Learning"],
+      "links": [
+        {
+          "label": "Getting started - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/getting-started/"
+        }
+      ]
+    },
+    {
+      "title": "Bitcoin networks lesson content screen",
+      "file": "bitcoin-networks-lesson-content-screen.jpg",
+      "tags": ["Education", "Learning", "Networks"],
+      "links": [
+        {
+          "label": "Networks - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/getting-started/technology-primer/#networks"
+        }
+      ]
+    },
+    {
+      "title": "Learning journey with completed first lesson",
+      "file": "learning-journey-with-completed-first-lesson.jpg",
+      "tags": ["Education", "Learning"],
+      "links": [
+        {
+          "label": "Getting started - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/getting-started/"
+        }
+      ]
+    },
+    {
+      "title": "More menu with settings and options",
+      "file": "more-menu-with-settings-and-options.jpg",
+      "tags": ["Settings", "Navigation"],
+      "links": [
+        {
+          "label": "Account management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/account-management/"
+        }
+      ]
+    },
+    {
+      "title": "Transaction confirmation bottom sheet",
+      "file": "transaction-confirmation-bottom-sheet.jpg",
+      "tags": ["Send", "Confirmation"],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        }
+      ]
+    },
+    {
+      "title": "Transaction broadcast success screen",
+      "file": "transaction-broadcast-success-screen.jpg",
+      "tags": ["Send", "Success States"],
+      "links": [
+        {
+          "label": "Sending bitcoin - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/payments/send/"
+        }
+      ]
+    },
+    {
+      "title": "Main wallet with pending send and completed receive transactions",
+      "file": "main-wallet-with-pending-send-and-completed-receive-transactions.jpg",
+      "tags": ["Main Interface", "Transaction History"],
+      "links": [
+        {
+          "label": "Account management - Bitcoin Design Guide",
+          "url": "https://bitcoin.design/guide/daily-spending-wallet/account-management/"
+        }
+      ]
+    }
+  ]
+}
