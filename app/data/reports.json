@@ -25,6 +25,34 @@
       "status": "New"
     },
     {
+      "id": "2026-08-17-muun-onboarding-positioning-review",
+      "date": "2026-08-17",
+      "wallet": "muun",
+      "walletTitle": "Muun",
+      "flow": "onboarding",
+      "flowName": "Onboarding",
+      "mode": "positioning-review",
+      "modeLabel": "Positioning review",
+      "persona": null,
+      "screens": [
+        "welcome-screen-with-wallet-creation-options",
+        "pin-creation-screen-with-numeric-keypad",
+        "pin-confirmation-screen-with-three-digits-entered",
+        "wallet-creation-success-screen-with-astronaut-illustration",
+        "main-wallet-screen-with-zero-balance-and-backup-reminder",
+        "security-center-showing-backup-options",
+        "settings-screen-with-general-and-advanced-options",
+        "lightning-network-settings-with-turbo-channels-enabled",
+        "receive-screen-with-notification-prompt-for-bitcoin-payments"
+      ],
+      "findings": {
+        "high": 2,
+        "medium": 3,
+        "low": 1
+      },
+      "status": "New"
+    },
+    {
       "id": "2026-08-17-muun-backup-copy-review",
       "date": "2026-08-17",
       "wallet": "muun",
