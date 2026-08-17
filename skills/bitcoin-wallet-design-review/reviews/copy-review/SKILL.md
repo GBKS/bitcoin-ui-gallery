@@ -11,6 +11,10 @@ Narrow and literal: this mode only judges words. It should be possible to do thi
 
 Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_shared/sources.md` if you haven't already this session.
 
+If you reached this file over HTTP rather than from disk, those relative paths won't resolve. Drop the `../../` and prepend `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/`. If a file won't load, name it and stop rather than improvising its contents.
+
+This mode especially needs you to **see the screenshots** — you're quoting copy verbatim off the screens, and the Gallery JSON contains none of it, only filenames and tags. If your tools can't return image content, stop and say so; a copy review built on remembered or guessed wording is worthless.
+
 ## Steps
 
 1. **Transcribe every piece of visible text** from the flow's screens, in order: headings, body copy, button/CTA labels, form labels and placeholders, error/warning messages, tooltips or inline help, confirmation messages. Missing microcopy (e.g. an error state not captured in the screenshots) goes in the report's "Gaps" section, not skipped silently.

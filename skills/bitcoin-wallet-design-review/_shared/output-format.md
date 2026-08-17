@@ -6,6 +6,8 @@ Every review mode produces a single markdown report following this shape. Consis
 
 Save each report as `reports/<YYYY-MM-DD>-<wallet>-<flow>-<mode>.md` (create the `reports/` folder alongside this skill if it doesn't exist). Example: `reports/2026-08-17-muun-onboarding-persona-walkthrough.md`.
 
+If you're running without filesystem write access — e.g. you fetched this skill over HTTP — you can't save anything. Output the complete report inline in your response instead, under a heading naming the file it should be saved as, and state plainly that you couldn't write it yourself. Same structure either way; only the destination changes.
+
 ## Required frontmatter block
 
 ```markdown

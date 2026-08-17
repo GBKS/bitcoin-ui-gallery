@@ -11,6 +11,10 @@ Whole-wallet, not screen-by-screen. This mode asks what the wallet is *for* and 
 
 Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_shared/sources.md` if you haven't already this session.
 
+If you reached this file over HTTP rather than from disk, those relative paths won't resolve. Drop the `../../` and prepend `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/`. If a file won't load, name it and stop rather than improvising its contents.
+
+You also need to be able to **see the screenshots** — the Gallery JSON carries only filenames and tags, no screen content. If your tools can't return image content, stop and say so rather than reviewing from memory of the app.
+
 ## Steps
 
 1. **Infer the implied target segment from the wallet's own choices**, primarily onboarding: What assumptions does it make about the user's prior bitcoin knowledge? What does it explain vs. take for granted? What's the first thing it asks the user to care about (security? speed? a specific use case like Lightning payments?)? Which of the three personas does this wallet seem built for, and how confidently?

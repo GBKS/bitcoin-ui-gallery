@@ -14,7 +14,7 @@ public/logos/                 # wallet logos
 To read data files directly without cloning: fetch the raw GitHub URL, e.g.
 `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/projects.json`
 
-For screenshots: either fetch the raw image URL the same way (swap in the image path from the wallet's JSON), or browse the live deployed gallery at `https://bitcoin-ui-gallery.netlify.app` if that's more reliable for viewing images in context (it also shows the flow grouping visually, which the raw JSON may not make obvious).
+For screenshots: either fetch the raw image URL the same way (swap in the image path from the wallet's JSON), or browse the live deployed gallery at `https://www.bitcoin-ui-gallery.com` if that's more reliable for viewing images in context (it also shows the flow grouping visually, which the raw JSON may not make obvious).
 
 Each flow in a wallet's JSON is typically tagged (onboarding, backup, receive, send, settings, etc.) and links to relevant sections of the Bitcoin Design Guide — pull those links in rather than re-deriving them, they're already curated.
 

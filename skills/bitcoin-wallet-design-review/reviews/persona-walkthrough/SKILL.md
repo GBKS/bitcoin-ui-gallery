@@ -11,6 +11,10 @@ Simulates one persona moving through one real flow, screen by screen, using actu
 
 Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_shared/sources.md` if you haven't already this session.
 
+If you reached this file over HTTP rather than from disk, those relative paths won't resolve. Drop the `../../` and prepend `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/`. If a file won't load, name it and stop — do not improvise its contents. Inventing personas instead of loading `personas.md` defeats the entire point of a fixed persona set, and the resulting review isn't comparable to any other run.
+
+You also need to be able to **see the screenshots**. The Gallery JSON gives you a filename and a tag per screen, nothing about what's on it. If your tools can't return image content, stop and say this review needs image-capable tooling or pasted screens — don't substitute your own memory of the app.
+
 ## Steps
 
 1. **Pick the persona.** Default mapping if not specified: Priya for onboarding, Dave for backup/security/advanced settings, Marisol for receive/send/payments. If the flow doesn't map cleanly, pick whichever persona has the most at stake in that flow and say why.
@@ -31,7 +35,7 @@ Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_
    - Any point where continuing requires trusting something the flow hasn't yet earned (e.g. asking for a backup before explaining why, for Priya; asking Dave to trust the app without showing him a way to independently verify)
    - Places where the persona would need to leave the flow (search, ask someone, read outside docs) to continue
 
-6. **Write the report** per `../../_shared/output-format.md`, save to `../../reports/`.
+6. **Write the report** per `../../_shared/output-format.md`, save to `../../reports/`. If you have no filesystem write access, output the full report inline in your response instead, and say that's what you're doing so it can be committed by hand.
 
 ## Explicitly out of scope for this mode
 
