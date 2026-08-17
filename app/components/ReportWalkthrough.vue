@@ -74,12 +74,9 @@ const resolved = computed(() =>
 	margin: 0;
 	flex: 0 0 auto;
 
-	// Phone screenshots are roughly 1:2.2, so constraining width makes them
-	// enormously tall. Cap the height instead and let width follow.
 	img {
-		max-height: var(--report-shot-height, 11rem);
-		width: auto;
-		max-width: 100%;
+		max-width: var(--report-shot-width, 10rem);
+		width: 100%;
 		height: auto;
 		border-radius: 0.5rem;
 		border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
@@ -126,7 +123,7 @@ const resolved = computed(() =>
 	}
 
 	.shot img {
-		max-height: var(--report-shot-height-narrow, 9rem);
+		max-width: var(--report-shot-width-narrow, 8rem);
 	}
 }
 </style>

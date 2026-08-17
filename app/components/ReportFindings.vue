@@ -152,15 +152,11 @@ const resolved = computed(() =>
 
 	figure {
 		margin: 0;
-		max-width: 9rem;
 	}
 
-	// Constrain the height, not the width — these are ~1:2.2 phone screenshots,
-	// so a fixed width makes them tower over the text beside them.
 	img {
-		max-height: var(--report-shot-height, 11rem);
-		width: auto;
-		max-width: 100%;
+		max-width: var(--report-shot-width, 10rem);
+		width: 100%;
 		height: auto;
 		display: block;
 		border-radius: 0.5rem;
@@ -193,7 +189,7 @@ const resolved = computed(() =>
 		flex-wrap: wrap;
 
 		img {
-			max-height: var(--report-shot-height-narrow, 9rem);
+			max-width: var(--report-shot-width-narrow, 8rem);
 		}
 	}
 }
