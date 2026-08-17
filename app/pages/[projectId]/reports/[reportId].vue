@@ -90,6 +90,12 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
+.report-page {
+	max-width: 48rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .crumbs {
 	opacity: 0.7;
 	margin-bottom: 1rem;
@@ -117,7 +123,7 @@ useHead({
 }
 
 .report-body {
-	max-width: 48rem;
+	
 }
 
 .section {

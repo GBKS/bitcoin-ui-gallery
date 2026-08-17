@@ -46,6 +46,12 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
+.reports-page {
+	max-width: 48rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .report-list {
 	list-style: none;
 	padding: 0;

@@ -64,13 +64,14 @@ const resolved = computed(() =>
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: 2rem;
 }
 
 .finding {
-	padding: 1rem 1.1rem;
-	border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
-	border-radius: 0.5rem;
+	+ .finding {
+		padding-top: 2rem;
+		border-top: 1px solid var(--border-color, rgba(128, 128, 128, 0.3));
+	}
 }
 
 .head {
@@ -94,8 +95,9 @@ const resolved = computed(() =>
 }
 
 .impact {
-	opacity: 0.7;
-	font-size: 0.9em;
+	opacity: 1;
+	font-weight: 600;
+	font-size: 1.1em;
 }
 
 .observed {

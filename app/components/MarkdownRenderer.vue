@@ -23,6 +23,11 @@ const html = computed(() =>
 </script>
 
 <style lang="scss" scoped>
+
+@use '@/assets/css/variables.scss' as variables;
+@use '@/assets/css/mixins.scss' as mixins;
+@use '@/assets/css/animations.scss' as animations;
+
 .markdown {
 	:deep(h1) { display: none; } // pages render their own title from the frontmatter
 	:deep(h2) { margin-top: 2rem; }
@@ -58,6 +63,22 @@ const html = computed(() =>
 	:deep(img) {
 		max-width: 100%;
 		height: auto;
+	}
+
+	:deep(ul) {
+		list-style-type: disc;
+		padding-left: 1rem;
+
+		li + li {
+			margin-top: 0.25rem;
+		}
+	}
+
+	@include mixins.media-query(huge) {
+    	:deep(h2) {
+	        font-size: 30px;
+			padding-bottom: 1rem;
+		}
 	}
 }
 </style>
