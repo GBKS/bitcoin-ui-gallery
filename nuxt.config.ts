@@ -50,13 +50,12 @@ export default defineNuxtConfig({
         { name: "twitter:site", content: "@gbks" },
         { name: "twitter:title", content:  "Bitcoin UI Gallery" },
         { name: "twitter:description", content: "A collection of screenshots of bitcoin applications." },
-        { name: "twitter:image", content: "https://www.bitcoin-ui-gallery.com/preview.jpg" },
+        { name: "twitter:image", content: "https://bitcoin-ui-gallery.netlify.app/android-chrome-512x512.png" },
 
         { property: "og:title", content: "Bitcoin UI Gallery" },
         { property: "og:description", content:  "A collection of screenshots of bitcoin applications." },
         { property: "og:type", content: "product" },
-        { property: "og:image", content: "https://www.bitcoin-ui-gallery.com/preview.jpg" },
-        { property: "og:url", content: "https://www.bitcoin-ui-gallery.com" },
+        { property: "og:image", content: "https://bitcoin-ui-gallery.netlify.app/android-chrome-512x512.png" },
 
         { name: "robots", content: "index,follow" },
         { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" },
@@ -67,10 +66,13 @@ export default defineNuxtConfig({
         { name: "mobile-web-app-status-bar-style", content: "black" }
       ],
       link: [
-        { rel: "canonical", href: "https://www.bitcoin-ui-gallery.com" },
-        { rel: "icon", type: "image/png", sizes: "32x32", href: "https://www.bitcoin-ui-gallery.com/bitcoin-logo-32.png" },
-        { rel: "icon", type: "image/png", sizes: "16x16", href: "https://www.bitcoin-ui-gallery.com/bitcoin-logo-16.png" },
-        { rel: "apple-touch-icon", sizes: "180x180", href: "https://www.bitcoin-ui-gallery.com/bitcoin-logo.png" }
+        // canonical + og:url are set per-route in app.vue — a single site-wide
+        // canonical would mark every page a duplicate of the home page
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+        { rel: "icon", href: "/favicon.ico" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+        { rel: "manifest", href: "/site.webmanifest" }
       ]
     }
   }

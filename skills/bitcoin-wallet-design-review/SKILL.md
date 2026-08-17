@@ -16,7 +16,7 @@ This skill runs in two different environments and behaves differently in each. D
 - If you have **filesystem access** to this repo, read them as relative paths — normal skill behavior.
 - If you reached this file **over HTTP**, relative paths will not resolve. Prepend this base to every one of them:
   `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/`
-  So `_shared/personas.md` becomes `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/personas.md`. The same files are also served at `https://www.bitcoin-ui-gallery.com/skills/bitcoin-wallet-design-review/`.
+  So `_shared/personas.md` becomes `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/personas.md`. The same files are also served at `https://bitcoin-ui-gallery.netlify.app/skills/bitcoin-wallet-design-review/`.
 
 Never substitute your own invention for a file you failed to load. If a referenced file 404s or your tools can't fetch it, say which file and stop — a review run with made-up personas or a made-up report format is worse than no review.
 
@@ -24,7 +24,30 @@ Never substitute your own invention for a file you failed to load. If a referenc
 
 > If you cannot load and actually look at the screenshot images, you cannot do this review. There is no text substrate to fall back on.
 
-Before proceeding, confirm your tools can return image content (a vision-capable fetch, a browser you can screenshot, or local image reads). If they can only return text/HTML, **stop and tell the person** that this skill needs image-capable tooling, and offer the one workable alternative: they paste or attach the screens themselves. Do not proceed on filename inference or on your own memory of the shipped app, and do not produce a hedged review with caveats about what you couldn't see — that output reads as a real review while being unfalsifiable, which is the worst possible failure mode here.
+Before proceeding, confirm your tools can return image content (a vision-capable fetch, a browser you can screenshot, or local image reads). Test it on one real screenshot rather than assuming — actually open the first screen of the flow and confirm you can describe something in it that isn't derivable from the filename.
+
+**Preflight failure output.** If any required input is unavailable — the screenshots, `_shared/personas.md`, or `_shared/output-format.md` — do not write a review. Emit exactly this instead, and stop:
+
+```markdown
+## Preflight failed — no review produced
+
+| Required input | Status | URL attempted |
+|---|---|---|
+| Screenshots for <wallet>/<flow> | Could not load image content | <url> |
+| _shared/personas.md | OK / failed | <url> |
+| _shared/output-format.md | OK / failed | <url> |
+
+**Why there's no review below:** this skill reviews what is actually on the screens. The Gallery's JSON records only a filename and a tag per screen — no description of screen content — so without the images there is nothing to review against, and any findings would be recalled from prior knowledge of this app rather than observed.
+
+**To get a real review:** paste or attach the screens for this flow, or re-run with tooling that can read images.
+```
+
+This block is the deliverable when preflight fails. Produce it and end your turn.
+
+Two things you may be tempted to do instead. Both are wrong:
+
+- **Writing the review anyway with a caveat at the end.** A reader sees a structured report with findings, a table, and a bottom line; the caveat does not undo that. You cannot flag your way out of not having the data.
+- **Substituting a different source for a file you couldn't load** — using the Bitcoin Design Guide's published personas because `_shared/personas.md` didn't resolve, for instance. The fixed persona set is what makes runs comparable to each other; swapping in a different set produces a report that looks right and is silently incomparable to every other run. If `personas.md` returns 404, say so in the table above. Before concluding it's unreachable, try both bases from the paths section — the file is publicly readable at each, so a failure is far more likely a wrong URL than a missing file.
 
 **Writing output.** If you have filesystem write access, write reports and log rows to disk as described below. If you don't, produce both inline in your response, clearly marked, so the person can commit them — and say that's what you're doing.
 
@@ -32,7 +55,7 @@ Before proceeding, confirm your tools can return image content (a vision-capable
 
 From the request, determine:
 
-- **Wallet**: a specific wallet in the Bitcoin UI Gallery (e.g. Muun, Phoenix). If none is named, pick one not reviewed recently — check `_shared/review-log.md` first. If the Gallery hasn't been fetched yet this session, get the wallet index from `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/projects.json`, and that wallet's detail file from `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/<wallet>.json`. Screenshots live under `public/screens/<wallet>/` in the same repo — construct raw URLs the same way, or browse the live site at `https://www.bitcoin-ui-gallery.com` if raw fetches are awkward for images.
+- **Wallet**: a specific wallet in the Bitcoin UI Gallery (e.g. Muun, Phoenix). If none is named, pick one not reviewed recently — check `_shared/review-log.md` first. If the Gallery hasn't been fetched yet this session, get the wallet index from `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/projects.json`, and that wallet's detail file from `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/<wallet>.json`. Screenshots live under `public/screens/<wallet>/` in the same repo — construct raw URLs the same way, or browse the live site at `https://bitcoin-ui-gallery.netlify.app` if raw fetches are awkward for images.
 - **Flow**: a specific user flow (onboarding, backup, receive, send/pay, settings, etc.). If none is named, pick one that fits the mode (see each mode's SKILL.md for defaults).
 - **Mode**: one of the review types below. If the person names it explicitly, use that. If they don't, default to rotating across modes — check the log for what ran most recently for this wallet and pick a different one.
 

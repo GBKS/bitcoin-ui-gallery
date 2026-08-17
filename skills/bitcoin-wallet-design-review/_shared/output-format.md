@@ -28,9 +28,13 @@ If you're running without filesystem write access — e.g. you fetched this skil
 
 A table. Every finding needs a specific screen/step reference — no finding should be so general it could apply to any wallet.
 
-| # | Screen/Step | Finding | Impact type | Severity | Suggested fix |
-|---|---|---|---|---|---|
-| 1 | Screen 3, seed phrase display | ... | Confusion | High | ... |
+| # | Screen/Step | Observed on screen (verbatim) | Finding | Impact type | Severity | Suggested fix |
+|---|---|---|---|---|---|---|
+| 1 | Screen 3, seed phrase display | "Write down these 12 words. Anyone with them can spend your bitcoin." | ... | Confusion | High | ... |
+
+**"Observed on screen" is mandatory and must be quoted verbatim from the screenshot you actually looked at.** Not paraphrased, not reconstructed from the filename, not recalled from your own knowledge of the app. It exists to make this report falsifiable: anyone can open the same screenshot and check the quote. If a finding is about a visual rather than text (layout, hierarchy, a missing element), describe precisely what is and isn't visible in the frame — still from the image in front of you.
+
+If you cannot fill this column for a row, that row is not a finding and must not appear in the table. If you cannot fill it for any row, you do not have a review — see the preflight rules in the router's Step 0.
 
 **Impact type** (pick one, the closest fit):
 - **Confusion** — user doesn't understand what's being asked or shown
@@ -50,7 +54,9 @@ At least one entry, even in a critical review. This isn't padding — comparativ
 
 ## Gaps in this review
 
-Note anything the Gallery screenshots couldn't show — error states, loading states, edge cases, live interaction timing, anything inferred rather than observed. This keeps the report honest about what's a screenshot-based inference versus an observed fact, and flags what a live-app review would need to confirm.
+Note anything the Gallery screenshots couldn't show — error states, loading states, edge cases, live interaction timing, transitions between screens. This flags what a live-app review would need to confirm.
+
+**This section is not a disclaimer bin.** It covers what the screenshots themselves don't capture. It does *not* cover screenshots you were unable to open — "I couldn't see the images, so treat the above as unverified" is not a gap note, it's an admission that the report shouldn't exist. In that situation you emit the preflight-failure block from the router's Step 0 and nothing else. A review whose findings are footnoted as unverified is more dangerous than no review: it carries the authority of a report while resting on your prior impressions of the app, and the reader has no way to tell which claims came from the screen.
 
 ## Carried forward
 
