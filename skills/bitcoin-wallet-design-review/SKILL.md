@@ -14,9 +14,15 @@ This skill runs in two different environments and behaves differently in each. D
 **Resolving the other files in this skill.** Every path below (`_shared/personas.md`, `reviews/<mode>/SKILL.md`) is written relative to this file's folder.
 
 - If you have **filesystem access** to this repo, read them as relative paths — normal skill behavior.
-- If you reached this file **over HTTP**, relative paths will not resolve. Prepend this base to every one of them:
-  `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/`
-  So `_shared/personas.md` becomes `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/personas.md`. The same files are also served at `https://bitcoin-ui-gallery.netlify.app/skills/bitcoin-wallet-design-review/`.
+- If you reached this file **over HTTP**, relative paths will not resolve. Prepend a base to every one of them. Try these in order — some sandboxes allowlist `github.com` but not other hosts, so if one is blocked the next may still work:
+
+  1. `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/` — cleanest, returns raw markdown.
+  2. `https://github.com/GBKS/bitcoin-ui-gallery/blob/main/skills/bitcoin-wallet-design-review/` — served from `github.com` itself with no redirect, so it survives a `github.com`-only allowlist. Returns the file rendered inside an HTML page; the full content is in there, just read it out of the markup.
+  3. `https://bitcoin-ui-gallery.netlify.app/skills/bitcoin-wallet-design-review/`
+
+  So `_shared/personas.md` becomes, under option 1, `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/personas.md`.
+
+  Try all three before reporting a file as unreachable. "One base was blocked" is not the same as "the file doesn't exist," and these files are definitely present in the repo.
 
 Never substitute your own invention for a file you failed to load. If a referenced file 404s or your tools can't fetch it, say which file and stop — a review run with made-up personas or a made-up report format is worse than no review.
 
@@ -24,7 +30,14 @@ Never substitute your own invention for a file you failed to load. If a referenc
 
 > If you cannot load and actually look at the screenshot images, you cannot do this review. There is no text substrate to fall back on.
 
-Before proceeding, confirm your tools can return image content (a vision-capable fetch, a browser you can screenshot, or local image reads). Test it on one real screenshot rather than assuming — actually open the first screen of the flow and confirm you can describe something in it that isn't derivable from the filename.
+Screenshot URLs, in order to try:
+
+1. `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/public/screens/<wallet>/<file>.png`
+2. `https://bitcoin-ui-gallery.netlify.app/screens/<wallet>/<file>.png`
+
+Note that `github.com/GBKS/bitcoin-ui-gallery/raw/main/<path>` is **not** a third option — it 302-redirects to `raw.githubusercontent.com`, so it ends up at the same host as option 1 and offers no advantage if that host is blocked. Image bytes are not served from `github.com` itself under any URL form.
+
+Before proceeding, confirm your tools can return image content (a vision-capable fetch, a browser you can screenshot, or local image reads). Test it on one real screenshot rather than assuming — actually open the first screen of the flow and confirm you can describe something in it that isn't derivable from the filename. Two different things can fail here, and they need different reporting: your tools may not handle images at all, or the host may be unreachable from your sandbox. Say which one it was.
 
 **Preflight failure output.** If any required input is unavailable — the screenshots, `_shared/personas.md`, or `_shared/output-format.md` — do not write a review. Emit exactly this instead, and stop:
 
