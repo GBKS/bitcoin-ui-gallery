@@ -3,38 +3,30 @@
 // Markdown stays the source of truth in the repo so the review skill can write and
 // diff it; compiling at build time means the site ships no markdown runtime.
 //
-// Output is deliberately split in two:
-//   app/data/reports.json        metadata only, loaded once at startup
-//   app/data/reports/<id>.json   one body per report, imported only by its own page
+// Output is app/data/reports.json: frontmatter only, no bodies. The store loads it
+// on every visit, so it has to stay small — pages render the markdown itself via
+// MarkdownRenderer, loading one report's source only when someone opens it.
 //
-// Keeping the rendered HTML out of the index matters: the store loads the index on
-// every visit, so a single combined file would make every visitor download every
-// report body to read none of them.
+// This step exists for the things the frontmatter can't check on its own: that the
+// YAML parses, that required keys are present, and that the wallet, flow and screen
+// ids actually resolve against the gallery data.
 //
 // Run: node scripts/generate-reports.mjs
 
-import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, rmSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { marked } from 'marked'
 import { parse as parseYaml } from 'yaml'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dir = join(root, 'skills/bitcoin-wallet-design-review/reports')
 const out = join(root, 'app/data/reports.json')
-const bodyDir = join(root, 'app/data/reports')
 
 const MODES = {
   'persona-walkthrough': 'Persona walkthrough',
   'copy-review': 'Copy review',
   'positioning-review': 'Positioning review'
 }
-
-marked.setOptions({ gfm: true })
-
-// Rebuild the body directory from scratch so deleted reports don't linger.
-rmSync(bodyDir, { recursive: true, force: true })
-mkdirSync(bodyDir, { recursive: true })
 
 if (!existsSync(dir)) {
   writeFileSync(out, JSON.stringify({ reports: [] }, null, 2) + '\n')
@@ -105,16 +97,8 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md') && f !== 'RE
   })
 
   const f = meta.findings || {}
-  const id = file.replace(/\.md$/, '')
-
-  // Body goes in its own file, fetched only when someone opens the report.
-  writeFileSync(
-    join(bodyDir, `${id}.json`),
-    JSON.stringify({ id, html: marked.parse(m[2].trim()) }, null, 2) + '\n'
-  )
-
   reports.push({
-    id,
+    id: file.replace(/\.md$/, ''),
     date: String(meta.date),
     wallet: meta.wallet,
     walletTitle: wallet?.title || meta.wallet,
@@ -134,5 +118,5 @@ reports.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.id < b.id
 
 writeFileSync(out, JSON.stringify({ reports }, null, 2) + '\n')
 console.log(
-  `Wrote ${out} + ${reports.length} body file(s)` + (problems ? `, ${problems} problem(s)` : '')
+  `Wrote ${out} — ${reports.length} report(s)` + (problems ? `, ${problems} problem(s)` : '')
 )

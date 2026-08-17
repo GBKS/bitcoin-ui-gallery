@@ -7,6 +7,11 @@ export default defineNuxtConfig({
   modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
   components: true, // Auto imports
 
+  // Report markdown lives with the skill that writes it, outside app/.
+  alias: {
+    '#reports': fileURLToPath(new URL('./skills/bitcoin-wallet-design-review/reports', import.meta.url))
+  },
+
   // Serve the repo-root skills/ folder as static files at /skills/*
   nitro: {
     publicAssets: [

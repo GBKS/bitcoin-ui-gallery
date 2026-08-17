@@ -23,7 +23,7 @@
 			</p>
 		</header>
 
-		<div class="report-body" v-html="body" />
+		<MarkdownRenderer class="report-body" :source="source" />
 
 		<section v-if="screens.length" class="screens">
 			<h2>Screens reviewed</h2>
@@ -57,11 +57,14 @@ if (!report) {
 	throw createError({ statusCode: 404, statusMessage: 'Report not found', fatal: true })
 }
 
-// The rendered body lives in its own file so the index stays small — only this
-// page ever pulls it, and only for the one report being read.
-const { data: body } = await useAsyncData(`report-${reportId}`, async () => {
-	const mod = await import(`~/data/reports/${reportId}.json`)
-	return mod.default.html
+// The markdown source itself, loaded only for the report being read. The index in
+// the store carries frontmatter only, so no other page pulls a report body.
+const { data: source } = await useAsyncData(`report-${reportId}`, async () => {
+	const mod = await import(`#reports/${reportId}.md?raw`)
+	// Drop the frontmatter here rather than in the renderer: this value is
+	// serialised into the hydration payload, and the metadata is already in the
+	// store index, so shipping it again would send the header twice.
+	return mod.default.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '').trim()
 })
 
 // Resolve the frontmatter's screen ids to full screen objects for the strip below.
@@ -105,30 +108,6 @@ useHead({
 
 .report-body {
 	max-width: 48rem;
-
-	// Report content is generated markdown, so these have to be unscoped-deep.
-	:deep(h1) { display: none; } // the page header already shows the title
-	:deep(h2) { margin-top: 2rem; }
-	:deep(table) {
-		width: 100%;
-		border-collapse: collapse;
-		margin: 1rem 0;
-		display: block;
-		overflow-x: auto;
-	}
-	:deep(th),
-	:deep(td) {
-		border: 1px solid var(--border-color, rgba(128, 128, 128, 0.3));
-		padding: 0.45rem 0.6rem;
-		text-align: left;
-		vertical-align: top;
-	}
-	:deep(th) { white-space: nowrap; }
-	:deep(blockquote) {
-		margin: 1rem 0;
-		padding-left: 1rem;
-		border-left: 3px solid var(--border-color, rgba(128, 128, 128, 0.4));
-	}
 }
 
 .screens {
