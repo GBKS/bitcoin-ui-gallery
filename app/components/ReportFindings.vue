@@ -1,6 +1,22 @@
 <template>
 	<ol class="findings">
 		<li v-for="(finding, index) in resolved" :key="index" class="finding">
+			<div class="shots" v-if="finding.screens.length">
+				<figure v-for="screen in finding.screens" :key="screen.id">
+					<NuxtLink :to="`/${projectId}/${screen.id}`">
+						<img
+							v-if="screen.image"
+							:src="screen.image"
+							:alt="screen.title"
+							loading="lazy"
+							decoding="async"
+						>
+						<figcaption>{{ screen.title }}</figcaption>
+					</NuxtLink>
+				</figure>
+			</div>
+
+			<div class="content">
 			<div class="head">
 				<span class="number">{{ index + 1 }}</span>
 				<SeverityPill :severity="finding.severity" />
@@ -16,14 +32,7 @@
 				{{ finding.fix }}
 			</p>
 
-			<p v-if="finding.screens.length" class="screens">
-				<NuxtLink
-					v-for="screen in finding.screens"
-					:key="screen.id"
-					:to="`/${projectId}/${screen.id}`"
-					class="screen-link"
-				>{{ screen.title }}</NuxtLink>
-			</p>
+			</div>
 		</li>
 	</ol>
 </template>
@@ -49,7 +58,11 @@ const resolved = computed(() =>
 		...finding,
 		screens: (finding.screens || []).map((id) => {
 			const screen = store.getScreen(props.projectId, id)
-			return { id, title: screen?.title || id }
+			return {
+				id,
+				title: screen?.title || id,
+				image: screen ? `/screens/${screen.folder}/${screen.file}` : null
+			}
 		})
 	}))
 )
@@ -68,6 +81,10 @@ const resolved = computed(() =>
 }
 
 .finding {
+	display: flex;
+	gap: 1.5rem;
+	align-items: flex-start;
+
 	+ .finding {
 		padding-top: 2rem;
 		border-top: 1px solid var(--border-color, rgba(128, 128, 128, 0.3));
@@ -127,18 +144,52 @@ const resolved = computed(() =>
 	}
 }
 
-.screens {
-	margin: 0.85rem 0 0;
+.shots {
+	flex: 0 0 9rem;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 0.4rem;
+	flex-direction: column;
+	gap: 0.75rem;
+
+	figure {
+		margin: 0;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 0.5rem;
+		border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
+	}
+
+	figcaption {
+		font-size: 0.75em;
+		opacity: 0.7;
+		margin-top: 0.3rem;
+	}
 }
 
-.screen-link {
-	font-size: 0.8em;
-	padding: 0.1rem 0.5rem;
-	border-radius: 0.75rem;
-	border: 1px solid var(--border-color, rgba(128, 128, 128, 0.3));
-	opacity: 0.85;
+.content {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+// Below this width a 9rem image column leaves the prose too narrow to read, so
+// the screenshots move above it and shrink. Matches the walkthrough's breakpoint.
+@media (max-width: 34rem) {
+	.finding {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.shots {
+		flex: none;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		figure {
+			width: 7rem;
+		}
+	}
 }
 </style>
