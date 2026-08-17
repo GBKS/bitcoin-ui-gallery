@@ -96,7 +96,54 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md') && f !== 'RE
     return true
   })
 
-  const f = meta.findings || {}
+  // Walkthrough steps and findings must point at screens the report says it examined,
+  // otherwise the page would render a step with no screenshot beside it.
+  const inScreens = new Set(screens)
+  const checkRef = (id, where) => {
+    if (!inScreens.has(id)) {
+      console.warn(`  ! ${file}: ${where} references "${id}", which is not in screens[]`)
+      problems++
+      return false
+    }
+    return true
+  }
+
+  const walkthrough = (meta.walkthrough || []).filter((step) => {
+    if (!step?.screen || !step?.text) {
+      console.warn(`  ! ${file}: walkthrough entry missing screen or text`)
+      problems++
+      return false
+    }
+    return checkRef(step.screen, 'walkthrough')
+  })
+
+  const findings = (meta.findings || []).filter((finding, i) => {
+    for (const key of ['observed', 'finding', 'severity']) {
+      if (!finding?.[key]) {
+        console.warn(`  ! ${file}: finding ${i + 1} missing "${key}"`)
+        problems++
+        return false
+      }
+    }
+    if (!['high', 'medium', 'low'].includes(finding.severity)) {
+      console.warn(`  ! ${file}: finding ${i + 1} has severity "${finding.severity}"`)
+      problems++
+      return false
+    }
+    const refs = finding.screens || []
+    if (!refs.length) {
+      console.warn(`  ! ${file}: finding ${i + 1} references no screen`)
+      problems++
+      return false
+    }
+    return refs.every((id) => checkRef(id, `finding ${i + 1}`))
+  })
+
+  // Counts are derived, never taken from the frontmatter, so they can't disagree
+  // with the findings actually listed.
+  const counts = { high: 0, medium: 0, low: 0 }
+  for (const finding of findings) counts[finding.severity]++
+
   reports.push({
     id: file.replace(/\.md$/, ''),
     date: String(meta.date),
@@ -108,7 +155,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md') && f !== 'RE
     modeLabel: MODES[meta.mode] || meta.mode,
     persona: meta.persona || null,
     screens,
-    findings: { high: f.high || 0, medium: f.medium || 0, low: f.low || 0 },
+    findings: counts,
     status: meta.status || 'New'
   })
 }

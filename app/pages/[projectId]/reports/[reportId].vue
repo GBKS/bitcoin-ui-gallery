@@ -23,19 +23,19 @@
 			</p>
 		</header>
 
-		<MarkdownRenderer class="report-body" :source="source" />
+		<MarkdownRenderer class="report-body" :source="doc.summary" />
 
-		<section v-if="screens.length" class="screens">
-			<h2>Screens reviewed</h2>
-			<ul>
-				<li v-for="screen in screens" :key="screen.id">
-					<NuxtLink :to="`/${report.wallet}/${screen.id}`">
-						<img :src="`/screens/${screen.folder}/${screen.file}`" :alt="screen.title" loading="lazy">
-						<span>{{ screen.title }}</span>
-					</NuxtLink>
-				</li>
-			</ul>
+		<section v-if="doc.walkthrough.length" class="section">
+			<h2>Walkthrough</h2>
+			<ReportWalkthrough :steps="doc.walkthrough" :project-id="projectId" />
 		</section>
+
+		<section v-if="doc.findings.length" class="section">
+			<h2>Findings</h2>
+			<ReportFindings :findings="doc.findings" :project-id="projectId" />
+		</section>
+
+		<MarkdownRenderer class="report-body" :source="doc.rest" />
 	</template>
 	<template v-else>
 		<p>Report not found. <NuxtLink :to="`/${projectId}/reports`">All reviews</NuxtLink></p>
@@ -44,6 +44,7 @@
 </template>
 
 <script setup>
+import { parse as parseYaml } from 'yaml'
 import { useSiteStore } from '~/stores/site.js'
 
 const route = useRoute()
@@ -57,20 +58,29 @@ if (!report) {
 	throw createError({ statusCode: 404, statusMessage: 'Report not found', fatal: true })
 }
 
-// The markdown source itself, loaded only for the report being read. The index in
-// the store carries frontmatter only, so no other page pulls a report body.
-const { data: source } = await useAsyncData(`report-${reportId}`, async () => {
+// The report's own source, loaded only for the report being read — the store index
+// carries metadata only, so no other page pulls this.
+//
+// Walkthrough steps and findings are structured data and live in the frontmatter;
+// the prose sections stay markdown. The body is split so the Summary renders above
+// the walkthrough and findings, and the remaining sections below them.
+const { data: doc } = await useAsyncData(`report-${reportId}`, async () => {
 	const mod = await import(`#reports/${reportId}.md?raw`)
-	// Drop the frontmatter here rather than in the renderer: this value is
-	// serialised into the hydration payload, and the metadata is already in the
-	// store index, so shipping it again would send the header twice.
-	return mod.default.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '').trim()
-})
+	const match = mod.default.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
+	const meta = match ? parseYaml(match[1]) : {}
+	const body = (match ? match[2] : mod.default).trim()
 
-// Resolve the frontmatter's screen ids to full screen objects for the strip below.
-const screens = (report?.screens || [])
-	.map(id => store.getScreen(projectId, id))
-	.filter(Boolean)
+	// Everything before "## What's working" is the summary; the rest follows the
+	// structured sections. Falls back to putting it all first if that heading moves.
+	const splitAt = body.search(/^## (What's working|Gaps in this review)/m)
+
+	return {
+		summary: splitAt === -1 ? body : body.slice(0, splitAt).trim(),
+		rest: splitAt === -1 ? '' : body.slice(splitAt).trim(),
+		walkthrough: meta.walkthrough || [],
+		findings: meta.findings || []
+	}
+})
 
 useHead({
   title: report
@@ -110,33 +120,11 @@ useHead({
 	max-width: 48rem;
 }
 
-.screens {
+.section {
 	margin-top: 2.5rem;
 
-	ul {
-		list-style: none;
-		padding: 0;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
-	}
-
-	li {
-		width: 8rem;
-	}
-
-	img {
-		width: 100%;
-		height: auto;
-		border-radius: 0.4rem;
-		border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
-	}
-
-	span {
-		display: block;
-		font-size: 0.8em;
-		opacity: 0.75;
-		margin-top: 0.35rem;
+	h2 {
+		margin-bottom: 1rem;
 	}
 }
 </style>
