@@ -11,7 +11,14 @@ Simulates one persona moving through one real flow, screen by screen, using actu
 
 Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_shared/sources.md` if you haven't already this session.
 
-If you reached this file over HTTP rather than from disk, those relative paths won't resolve. Drop the `../../` and prepend `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/`. If that host is blocked in your sandbox, use `https://github.com/GBKS/bitcoin-ui-gallery/blob/main/skills/bitcoin-wallet-design-review/` instead — it is served from `github.com` with no redirect and contains the same content inside an HTML page. Try both before calling a file unreachable. If a file won't load, name it and stop — do not improvise its contents. Inventing personas instead of loading `personas.md` defeats the entire point of a fixed persona set, and the resulting review isn't comparable to any other run.
+If you reached this file over HTTP rather than from disk, those relative paths won't resolve — and if your fetch tool only accepts URLs that appeared verbatim in an earlier result, you cannot build them by joining a base to a path either. Use these complete URLs:
+
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/personas.md
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/output-format.md
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/sources.md
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/screen-urls.md
+
+If `raw.githubusercontent.com` is unreachable, the same files are at `https://github.com/GBKS/bitcoin-ui-gallery/blob/main/skills/bitcoin-wallet-design-review/_shared/personas.md` (content inside the HTML) and on `https://bitcoin-ui-gallery.netlify.app/skills/bitcoin-wallet-design-review/_shared/personas.md`. Try each before calling a file unreachable. If a file won't load, name it and stop — do not improvise its contents. Inventing personas instead of loading `personas.md` defeats the entire point of a fixed persona set, and the resulting review isn't comparable to any other run.
 
 You also need to be able to **see the screenshots**. The Gallery JSON gives you a filename and a tag per screen, nothing about what's on it. If your tools can't return image content, stop and say this review needs image-capable tooling or pasted screens — don't substitute your own memory of the app.
 
