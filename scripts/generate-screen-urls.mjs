@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const RAW = 'https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/public/screens'
 const SITE = 'https://bitcoin-ui-gallery.netlify.app/screens'
+const DATA = 'https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data'
 const out = join(root, 'skills/bitcoin-wallet-design-review/_shared/screen-urls.md')
 
 const wallets = readdirSync(join(root, 'app/data'))
@@ -38,6 +39,11 @@ const lines = [
   "router's SKILL.md.",
   ''
 ]
+
+lines.push('## Wallet data files', '')
+lines.push('Flows, screen order, and Design Guide links per wallet.', '')
+for (const wallet of wallets) lines.push(`- ${DATA}/${wallet}.json`)
+lines.push('')
 
 let total = 0
 for (const wallet of wallets) {

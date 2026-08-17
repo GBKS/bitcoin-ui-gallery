@@ -7,6 +7,28 @@ description: Router for automated product/design reviews of bitcoin wallets, usi
 
 This is the entry point. Its only job is: figure out what's being reviewed, pick a mode, load shared context, dispatch, then log the result. Do not attempt review logic here — that lives in the mode-specific skills under `reviews/`.
 
+## How to invoke this skill
+
+For whoever is *starting* a run, rather than the agent executing it. How the request is phrased has repeatedly mattered more than the skill's own wording.
+
+A prompt that works:
+
+```
+Follow the skill at
+https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/SKILL.md
+
+Review <wallet>'s <flow> flow. Start with Step 0 and run the preflight before
+anything else. Use only URLs written literally in the skill files — do not
+construct URLs by pattern. If you cannot fetch the screenshot images, emit the
+preflight-failure block and stop.
+```
+
+Three things to avoid, each of which has caused a fabricated review in practice:
+
+- **Don't point at the Netlify copy of this file.** Some fetch tools only permit URLs that appeared verbatim in an earlier result, so whichever host you name becomes the anchor for everything that follows. Naming `raw.githubusercontent.com` puts the shared files, the mode skills, and `screen-urls.md` one hop away on the same host. Naming the site instead invites the agent to invent sibling URLs there.
+- **Don't also hand over the wallet's gallery page** (e.g. `.../phoenix`). It's a rendered HTML page carrying screen titles and tags — enough to *look* like a data source, not remotely enough to review. Its presence lets an agent that can't read the screenshots keep going instead of stopping, and titles get padded out with half-remembered knowledge of the app. The skill fetches the wallet data itself.
+- **Don't name the review mode if you can avoid it.** Doing so signals that Step 1 is already settled, and the preflight above it tends to get skimmed along with it. Describe what you want reviewed and let the router dispatch.
+
 ## Step 0 — Establish your runtime, before anything else
 
 This skill runs in two different environments and behaves differently in each. Determine which you're in first.
@@ -76,7 +98,18 @@ Two things you may be tempted to do instead. Both are wrong:
 
 From the request, determine:
 
-- **Wallet**: a specific wallet in the Bitcoin UI Gallery (e.g. Muun, Phoenix). If none is named, pick one not reviewed recently — check `_shared/review-log.md` first. If the Gallery hasn't been fetched yet this session, get the wallet index from `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/projects.json`, and that wallet's detail file from `https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/<wallet>.json`. Screenshots live under `public/screens/<wallet>/` in the same repo — construct raw URLs the same way, or browse the live site at `https://bitcoin-ui-gallery.netlify.app` if raw fetches are awkward for images.
+- **Wallet**: a specific wallet in the Bitcoin UI Gallery. If none is named, pick one not reviewed recently — check `_shared/review-log.md` first. Each wallet's data file holds its flows, screen sequence, and Design Guide links. Complete URLs, to copy rather than construct:
+
+  | Wallet | Data file |
+  |---|---|
+  | Muun | https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/muun.json |
+  | Phoenix | https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/phoenix.json |
+  | OKX | https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/okx.json |
+  | Padawan | https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/padawan.json |
+
+  The index at https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/projects.json lists wallet ids only — no URLs — so it can't get you to a data file on its own. If a wallet exists in the Gallery but isn't in the table above, this file is out of date: say so rather than guessing its URL.
+
+  **Screenshots are not addressed from this data.** The data file gives filenames only. Get the image URLs from `_shared/screen-urls.md` as described in Step 0, and never assemble one from a folder path and a filename.
 - **Flow**: a specific user flow (onboarding, backup, receive, send/pay, settings, etc.). If none is named, pick one that fits the mode (see each mode's SKILL.md for defaults).
 - **Mode**: one of the review types below. If the person names it explicitly, use that. If they don't, default to rotating across modes — check the log for what ran most recently for this wallet and pick a different one.
 

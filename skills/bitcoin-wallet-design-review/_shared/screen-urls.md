@@ -13,6 +13,15 @@ Two hosts are given per screen. The first serves the raw image bytes. If your to
 retrieve image content from either, you cannot run a review — see the preflight rules in the
 router's SKILL.md.
 
+## Wallet data files
+
+Flows, screen order, and Design Guide links per wallet.
+
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/muun.json
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/okx.json
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/padawan.json
+- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/app/data/phoenix.json
+
 ## Muun
 
 ### Onboarding
