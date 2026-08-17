@@ -1,6 +1,11 @@
 <template>
 	<ol class="findings">
-		<li v-for="(finding, index) in resolved" :key="index" class="finding">
+		<li
+			v-for="(finding, index) in resolved"
+			:key="index"
+			class="finding"
+			:class="{ stacked: finding.screens.length > 1 }"
+		>
 			<div class="shots" v-if="finding.screens.length">
 				<figure v-for="screen in finding.screens" :key="screen.id">
 					<NuxtLink :to="`/${projectId}/${screen.id}`">
@@ -178,6 +183,21 @@ const resolved = computed(() =>
 .content {
 	flex: 1 1 auto;
 	min-width: 0;
+}
+
+// A single screenshot sits beside the text, but two stacked in a narrow column
+// leave a tall gap next to the prose. With more than one, the text runs full
+// width and the screenshots sit in a row underneath it.
+.finding.stacked {
+	flex-direction: column;
+	gap: 1rem;
+
+	.shots {
+		order: 2;
+		flex: none;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 }
 
 // Below this width a 9rem image column leaves the prose too narrow to read, so
