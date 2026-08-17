@@ -5,6 +5,16 @@
 			:screen="screen"
 			:project="project"
 		/>
+
+		<p v-if="reports.length" class="screen-reports">
+			Referenced in
+			<template v-for="(report, i) in reports" :key="report.id">
+				<NuxtLink :to="`/${projectId}/reports/${report.id}`">{{ report.modeLabel }}, {{ report.date }}</NuxtLink><span v-if="i < reports.length - 1">, </span>
+			</template>
+		</p>
+	</template>
+	<template v-else>
+		<p>Screen not found. <NuxtLink :to="`/${projectId}`">Back to {{ project ? project.title : 'the wallet' }}</NuxtLink></p>
 	</template>
   </div>
 </template>
@@ -21,6 +31,12 @@ const screenId = route.params.screenId
 // Get screens for specific project
 const project = store.getProjectById(projectId)
 const screen = store.getScreen(projectId, screenId)
+const reports = store.getReportsByScreenId(projectId, screenId)
+
+// Unknown screen ids previously rendered an empty 200 page; make them a real 404.
+if (!screen) {
+	throw createError({ statusCode: 404, statusMessage: 'Screen not found', fatal: true })
+}
 
 </script>
 

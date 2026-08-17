@@ -8,7 +8,8 @@ export const useSiteStore = defineStore('site', {
     _dataInitialized: false,
     projects: [],
     allScreens: [],
-    projectsById: {}
+    projectsById: {},
+    reports: []
   }),
 
   actions: {
@@ -68,6 +69,11 @@ export const useSiteStore = defineStore('site', {
         })
         
         this.allScreens = allScreens
+
+        // Review reports, compiled from markdown by scripts/generate-reports.mjs
+        const reportsData = await import('~/data/reports.json')
+        this.reports = reportsData.default.reports || []
+
         this._dataInitialized = true
 
         console.log('Project data initialized:', {
@@ -176,6 +182,25 @@ export const useSiteStore = defineStore('site', {
           screen.project.id === projectId && screen.id === screenId
         )
       }).filter(Boolean) // Remove any null/undefined screens
+    },
+
+    // Reports for one wallet, newest first
+    getReportsByProjectId: (state) => (projectId) => {
+      return state.reports.filter(report => report.wallet === projectId)
+    },
+
+    // A single report by its id (the markdown filename without extension)
+    getReport: (state) => (projectId, reportId) => {
+      return state.reports.find(
+        report => report.wallet === projectId && report.id === reportId
+      ) || null
+    },
+
+    // Reports that examined a given screen — powers "referenced in N reviews"
+    getReportsByScreenId: (state) => (projectId, screenId) => {
+      return state.reports.filter(
+        report => report.wallet === projectId && report.screens.includes(screenId)
+      )
     },
 
     // Get screens by tag (supports URL-friendly format: lowercase with dashes)

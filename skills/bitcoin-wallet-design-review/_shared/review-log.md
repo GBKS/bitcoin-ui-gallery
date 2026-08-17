@@ -4,7 +4,7 @@ Append one row per completed review run, most recent last. This is what the rout
 
 | Date | Wallet | Flow | Mode | Findings (H/M/L) | Key theme | Status vs. prior | Report |
 |---|---|---|---|---|---|---|---|
-| _(no runs yet)_ | | | | | | | |
+| 2026-08-17 | phoenix | initial-onboarding | persona-walkthrough | 1/4/1 | Strong self-custody disclosure, but "keep it safe" assigns a duty the flow never lets the user discharge | New | reports/2026-08-17-phoenix-initial-onboarding-persona-walkthrough.md |
 
 **Status vs. prior** — one of: `New` (first review of this wallet+flow), `Recurring` (repeats a prior High/Medium finding), `Improved` (a prior finding appears resolved), `Regressed` (something that looked fine before now looks worse).
 

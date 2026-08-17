@@ -12,10 +12,16 @@
 
 			<ProjectDetails :project="project" />
 
-			<FlowList 
+			<FlowList
 				:v-if="flows.length > 0"
 				:flows="flows"
 			/>
+
+			<p v-if="reports.length" class="reports-link">
+				<NuxtLink :to="`/${project.id}/reports`">
+					{{ reports.length }} design review{{ reports.length === 1 ? '' : 's' }}
+				</NuxtLink>
+			</p>
 		</div>
 
 		<ScreenGrid
@@ -39,6 +45,7 @@ const projectId = route.params.projectId
 const project = store.getProjectById(projectId)
 const screens = store.getScreensByProjectId(projectId)
 const flows = store.getFlowsByProjectId(projectId)
+const reports = store.getReportsByProjectId(projectId)
 
 </script>
 
