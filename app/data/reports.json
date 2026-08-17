@@ -23,6 +23,45 @@
         "low": 1
       },
       "status": "New"
+    },
+    {
+      "id": "2026-08-17-muun-backup-copy-review",
+      "date": "2026-08-17",
+      "wallet": "muun",
+      "walletTitle": "Muun",
+      "flow": "backup",
+      "flowName": "Backup",
+      "mode": "copy-review",
+      "modeLabel": "Copy review",
+      "persona": "Dave",
+      "screens": [
+        "main-wallet-screen-with-zero-balance-and-backup-reminder",
+        "security-center-showing-backup-options",
+        "email-backup-setup-screen",
+        "email-backup-confirmation-dialog",
+        "security-center-with-email-backup-skipped",
+        "alternative-backup-setup-screen-with-recovery-phrase-illustration",
+        "recovery-code-display-screen-step-1-of-3",
+        "recovery-code-confirmation-screen-step-2-of-3",
+        "recovery-code-acknowledgment-screen-step-3-of-3",
+        "recovery-code-backup-success-screen",
+        "security-center-with-alternative-backup-completed",
+        "emergency-kit-intro-screen-explaining-pdf-document",
+        "emergency-kit-storage-explanation-screen",
+        "emergency-kit-ownership-explanation-with-creation-button",
+        "emergency-kit-save-options-screen",
+        "emergency-kit-save-options-with-cloud-storage-safety-explanation",
+        "emergency-kit-verification-code-entry-screen",
+        "verification-code-help-modal-with-location-illustration",
+        "emergency-kit-verification-success-screen",
+        "security-center-with-all-backups-completed"
+      ],
+      "findings": {
+        "high": 3,
+        "medium": 6,
+        "low": 2
+      },
+      "status": "New"
     }
   ]
 }
