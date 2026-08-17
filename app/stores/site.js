@@ -110,11 +110,9 @@ export const useSiteStore = defineStore('site', {
 
       // Return flows with additional metadata
       return project.flows.map(flow => {
-        // Convert flow name to URL-friendly slug (lowercase, spaces to dashes)
-        const flowSlug = flow.name.toLowerCase().replace(/\s+/g, '-')
         return {
           ...flow,
-          id: flowSlug,
+          id: flow.id,
           projectId: projectId,
           project: {
             title: project.title,
@@ -125,10 +123,10 @@ export const useSiteStore = defineStore('site', {
       })
     },
 
-    // Get screen by project ID and screen file name
-    getScreen: (state) => (projectId, fileName) => {
-      return state.allScreens.find(screen => 
-        screen.project.id === projectId && screen.file.split('.').shift() === fileName
+    // Get screen by project ID and stable screen id
+    getScreen: (state) => (projectId, screenId) => {
+      return state.allScreens.find(screen =>
+        screen.project.id === projectId && screen.id === screenId
       )
     },
 
@@ -139,9 +137,7 @@ export const useSiteStore = defineStore('site', {
 
       // Find flow by matching the flowId slug to the flow name
       const flowIndex = project.flows.findIndex(flow => {
-        // Convert flow name to URL-friendly slug (lowercase, spaces to dashes)
-        const flowSlug = flow.name.toLowerCase().replace(/\s+/g, '-')
-        return flowSlug === flowId
+        return flow.id === flowId
       })
 
       if (flowIndex === -1) return null
@@ -169,17 +165,15 @@ export const useSiteStore = defineStore('site', {
 
       // Find flow by matching the flowId slug to the flow name
       const flow = project.flows.find(flow => {
-        // Convert flow name to URL-friendly slug (lowercase, spaces to dashes)
-        const flowSlug = flow.name.toLowerCase().replace(/\s+/g, '-')
-        return flowSlug === flowId
+        return flow.id === flowId
       })
 
       if (!flow) return []
 
-      // Map screen file names to full screen objects
-      return flow.screens.map(screenFile => {
-        return state.allScreens.find(screen => 
-          screen.project.id === projectId && screen.file === screenFile
+      // Map screen ids to full screen objects
+      return flow.screens.map(screenId => {
+        return state.allScreens.find(screen =>
+          screen.project.id === projectId && screen.id === screenId
         )
       }).filter(Boolean) // Remove any null/undefined screens
     },
@@ -273,7 +267,7 @@ export const useSiteStore = defineStore('site', {
           project.flows.forEach(flow => {
             if (flow.name.toLowerCase().includes(searchTerm)) {
               // Convert flow name to URL-friendly slug (lowercase, spaces to dashes)
-              const flowSlug = flow.name.toLowerCase().replace(/\s+/g, '-')
+              const flowSlug = flow.id
               matchingFlows.push({
                 ...flow,
                 id: flowSlug,
@@ -332,7 +326,7 @@ export const useSiteStore = defineStore('site', {
         if (project.flows) {
           project.flows.forEach(flow => {
             // Convert flow name to URL-friendly slug (lowercase, spaces to dashes)
-            const flowSlug = flow.name.toLowerCase().replace(/\s+/g, '-')
+            const flowSlug = flow.id
             
             // Count screens in this flow
             const screenCount = flow.screens ? flow.screens.length : 0

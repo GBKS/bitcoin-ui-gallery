@@ -11,12 +11,13 @@
   },
   "flows": [
     {
+      "id": "onboarding",
       "name": "Onboarding",
       "screens": [
-        "welcome-screen-with-app-introduction.jpg",
-        "learn-by-doing-onboarding-screen.jpg",
-        "level-up-lessons-onboarding-screen.jpg",
-        "wallet-setup-options-screen.jpg"
+        "welcome-screen-with-app-introduction",
+        "learn-by-doing-onboarding-screen",
+        "level-up-lessons-onboarding-screen",
+        "wallet-setup-options-screen"
       ],
       "links": [
         {
@@ -30,9 +31,10 @@
       ]
     },
     {
+      "id": "wallet-recovery",
       "name": "Wallet Recovery",
       "screens": [
-        "recover-wallet-with-12-word-seed-phrase.jpg"
+        "recover-wallet-with-12-word-seed-phrase"
       ],
       "links": [
         {
@@ -42,11 +44,12 @@
       ]
     },
     {
+      "id": "getting-test-coins",
       "name": "Getting Test Coins",
       "screens": [
-        "empty-wallet-with-get-signet-coins-prompt.jpg",
-        "dialog-asking-to-receive-test-bitcoin.jpg",
-        "main-wallet-screen-with-pending-receive-transaction-in-sats.jpg"
+        "empty-wallet-with-get-signet-coins-prompt",
+        "dialog-asking-to-receive-test-bitcoin",
+        "main-wallet-screen-with-pending-receive-transaction-in-sats"
       ],
       "links": [
         {
@@ -56,13 +59,14 @@
       ]
     },
     {
+      "id": "send-bitcoin",
       "name": "Send Bitcoin",
       "screens": [
-        "send-bitcoin-screen-with-insufficient-balance-error.jpg",
-        "send-bitcoin-screen-with-fee-adjustment-slider.jpg",
-        "transaction-confirmation-bottom-sheet.jpg",
-        "transaction-broadcast-success-screen.jpg",
-        "main-wallet-with-pending-send-and-completed-receive-transactions.jpg"
+        "send-bitcoin-screen-with-insufficient-balance-error",
+        "send-bitcoin-screen-with-fee-adjustment-slider",
+        "transaction-confirmation-bottom-sheet",
+        "transaction-broadcast-success-screen",
+        "main-wallet-with-pending-send-and-completed-receive-transactions"
       ],
       "links": [
         {
@@ -76,11 +80,12 @@
       ]
     },
     {
+      "id": "learning-journey",
       "name": "Learning Journey",
       "screens": [
-        "learning-journey-screen-with-lesson-categories.jpg",
-        "bitcoin-networks-lesson-content-screen.jpg",
-        "learning-journey-with-completed-first-lesson.jpg"
+        "learning-journey-screen-with-lesson-categories",
+        "bitcoin-networks-lesson-content-screen",
+        "learning-journey-with-completed-first-lesson"
       ],
       "links": [
         {
@@ -96,9 +101,13 @@
   ],
   "screens": [
     {
-      "title": "Welcome screen with app introduction",
+      "id": "welcome-screen-with-app-introduction",
       "file": "welcome-screen-with-app-introduction.jpg",
-      "tags": ["Onboarding"],
+      "title": "Welcome screen with app introduction",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Onboarding"
+      ],
       "links": [
         {
           "label": "First use - Bitcoin Design Guide",
@@ -107,9 +116,14 @@
       ]
     },
     {
-      "title": "Learn by doing onboarding screen",
+      "id": "learn-by-doing-onboarding-screen",
       "file": "learn-by-doing-onboarding-screen.jpg",
-      "tags": ["Onboarding", "Education"],
+      "title": "Learn by doing onboarding screen",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Onboarding",
+        "Education"
+      ],
       "links": [
         {
           "label": "First use - Bitcoin Design Guide",
@@ -118,9 +132,14 @@
       ]
     },
     {
-      "title": "Level up lessons onboarding screen",
+      "id": "level-up-lessons-onboarding-screen",
       "file": "level-up-lessons-onboarding-screen.jpg",
-      "tags": ["Onboarding", "Education"],
+      "title": "Level up lessons onboarding screen",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Onboarding",
+        "Education"
+      ],
       "links": [
         {
           "label": "First use - Bitcoin Design Guide",
@@ -129,9 +148,14 @@
       ]
     },
     {
-      "title": "Wallet setup options screen",
+      "id": "wallet-setup-options-screen",
       "file": "wallet-setup-options-screen.jpg",
-      "tags": ["Onboarding", "Wallet Setup"],
+      "title": "Wallet setup options screen",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Onboarding",
+        "Wallet Setup"
+      ],
       "links": [
         {
           "label": "Creating a wallet - Bitcoin Design Guide",
@@ -140,9 +164,14 @@
       ]
     },
     {
-      "title": "Recover wallet with 12-word seed phrase",
+      "id": "recover-wallet-with-12-word-seed-phrase",
       "file": "recover-wallet-with-12-word-seed-phrase.jpg",
-      "tags": ["Backup", "Recovery"],
+      "title": "Recover wallet with 12-word seed phrase",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Backup",
+        "Recovery"
+      ],
       "links": [
         {
           "label": "Restoring a wallet - Bitcoin Design Guide",
@@ -151,9 +180,14 @@
       ]
     },
     {
-      "title": "Empty wallet with get signet coins prompt",
+      "id": "empty-wallet-with-get-signet-coins-prompt",
       "file": "empty-wallet-with-get-signet-coins-prompt.jpg",
-      "tags": ["Main Interface", "Testnet"],
+      "title": "Empty wallet with get signet coins prompt",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Main Interface",
+        "Testnet"
+      ],
       "links": [
         {
           "label": "Account management - Bitcoin Design Guide",
@@ -162,9 +196,14 @@
       ]
     },
     {
-      "title": "Dialog asking to receive test bitcoin",
+      "id": "dialog-asking-to-receive-test-bitcoin",
       "file": "dialog-asking-to-receive-test-bitcoin.jpg",
-      "tags": ["Receive", "Testnet"],
+      "title": "Dialog asking to receive test bitcoin",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Receive",
+        "Testnet"
+      ],
       "links": [
         {
           "label": "Requesting bitcoin - Bitcoin Design Guide",
@@ -173,9 +212,14 @@
       ]
     },
     {
-      "title": "Main wallet screen with pending receive transaction in sats",
+      "id": "main-wallet-screen-with-pending-receive-transaction-in-sats",
       "file": "main-wallet-screen-with-pending-receive-transaction-in-sats.jpg",
-      "tags": ["Main Interface", "Transaction History"],
+      "title": "Main wallet screen with pending receive transaction in sats",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Main Interface",
+        "Transaction History"
+      ],
       "links": [
         {
           "label": "Account management - Bitcoin Design Guide",
@@ -184,9 +228,14 @@
       ]
     },
     {
-      "title": "Main wallet screen with balance toggled to BTC",
+      "id": "main-wallet-screen-with-balance-toggled-to-btc",
       "file": "main-wallet-screen-with-balance-toggled-to-btc.jpg",
-      "tags": ["Main Interface", "Units"],
+      "title": "Main wallet screen with balance toggled to BTC",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Main Interface",
+        "Units"
+      ],
       "links": [
         {
           "label": "Account management - Bitcoin Design Guide",
@@ -199,9 +248,14 @@
       ]
     },
     {
-      "title": "Send bitcoin screen with insufficient balance error",
+      "id": "send-bitcoin-screen-with-insufficient-balance-error",
       "file": "send-bitcoin-screen-with-insufficient-balance-error.jpg",
-      "tags": ["Send", "Error States"],
+      "title": "Send bitcoin screen with insufficient balance error",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Send",
+        "Error States"
+      ],
       "links": [
         {
           "label": "Sending bitcoin - Bitcoin Design Guide",
@@ -210,9 +264,14 @@
       ]
     },
     {
-      "title": "Send bitcoin screen with fee adjustment slider",
+      "id": "send-bitcoin-screen-with-fee-adjustment-slider",
       "file": "send-bitcoin-screen-with-fee-adjustment-slider.jpg",
-      "tags": ["Send", "Fees"],
+      "title": "Send bitcoin screen with fee adjustment slider",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Send",
+        "Fees"
+      ],
       "links": [
         {
           "label": "Sending bitcoin - Bitcoin Design Guide",
@@ -225,9 +284,14 @@
       ]
     },
     {
-      "title": "Learning journey screen with lesson categories",
+      "id": "learning-journey-screen-with-lesson-categories",
       "file": "learning-journey-screen-with-lesson-categories.jpg",
-      "tags": ["Education", "Learning"],
+      "title": "Learning journey screen with lesson categories",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Education",
+        "Learning"
+      ],
       "links": [
         {
           "label": "Getting started - Bitcoin Design Guide",
@@ -236,9 +300,15 @@
       ]
     },
     {
-      "title": "Bitcoin networks lesson content screen",
+      "id": "bitcoin-networks-lesson-content-screen",
       "file": "bitcoin-networks-lesson-content-screen.jpg",
-      "tags": ["Education", "Learning", "Networks"],
+      "title": "Bitcoin networks lesson content screen",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Education",
+        "Learning",
+        "Networks"
+      ],
       "links": [
         {
           "label": "Networks - Bitcoin Design Guide",
@@ -247,9 +317,14 @@
       ]
     },
     {
-      "title": "Learning journey with completed first lesson",
+      "id": "learning-journey-with-completed-first-lesson",
       "file": "learning-journey-with-completed-first-lesson.jpg",
-      "tags": ["Education", "Learning"],
+      "title": "Learning journey with completed first lesson",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Education",
+        "Learning"
+      ],
       "links": [
         {
           "label": "Getting started - Bitcoin Design Guide",
@@ -258,9 +333,14 @@
       ]
     },
     {
-      "title": "More menu with settings and options",
+      "id": "more-menu-with-settings-and-options",
       "file": "more-menu-with-settings-and-options.jpg",
-      "tags": ["Settings", "Navigation"],
+      "title": "More menu with settings and options",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Settings",
+        "Navigation"
+      ],
       "links": [
         {
           "label": "Account management - Bitcoin Design Guide",
@@ -269,9 +349,14 @@
       ]
     },
     {
-      "title": "Transaction confirmation bottom sheet",
+      "id": "transaction-confirmation-bottom-sheet",
       "file": "transaction-confirmation-bottom-sheet.jpg",
-      "tags": ["Send", "Confirmation"],
+      "title": "Transaction confirmation bottom sheet",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Send",
+        "Confirmation"
+      ],
       "links": [
         {
           "label": "Sending bitcoin - Bitcoin Design Guide",
@@ -280,9 +365,14 @@
       ]
     },
     {
-      "title": "Transaction broadcast success screen",
+      "id": "transaction-broadcast-success-screen",
       "file": "transaction-broadcast-success-screen.jpg",
-      "tags": ["Send", "Success States"],
+      "title": "Transaction broadcast success screen",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Send",
+        "Success States"
+      ],
       "links": [
         {
           "label": "Sending bitcoin - Bitcoin Design Guide",
@@ -291,9 +381,14 @@
       ]
     },
     {
-      "title": "Main wallet with pending send and completed receive transactions",
+      "id": "main-wallet-with-pending-send-and-completed-receive-transactions",
       "file": "main-wallet-with-pending-send-and-completed-receive-transactions.jpg",
-      "tags": ["Main Interface", "Transaction History"],
+      "title": "Main wallet with pending send and completed receive transactions",
+      "addedAt": "2025-11-04",
+      "tags": [
+        "Main Interface",
+        "Transaction History"
+      ],
       "links": [
         {
           "label": "Account management - Bitcoin Design Guide",

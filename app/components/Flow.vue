@@ -1,7 +1,7 @@
 <template>
 	<NuxtLink
 		class="flow"
-		:to="`/flow/${flow.projectId}/${flow.name.toLowerCase().replace(/\s+/g, '-')}`"
+		:to="`/flow/${flow.projectId}/${flow.id}`"
 	>
 		~{{ flow.name }}
 	</NuxtLink>

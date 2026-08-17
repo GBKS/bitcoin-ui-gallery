@@ -51,29 +51,35 @@ for (const wallet of wallets) {
   lines.push(`## ${data.title || wallet}`, '')
 
   const folder = data.folder || wallet
+  // Flows reference screens by stable id; the file is looked up from the screen entry.
+  const fileById = new Map((data.screens || []).map((s) => [s.id, s.file]))
   const inFlow = new Set()
+
+  const entry = (id) => {
+    const file = fileById.get(id)
+    if (!file) {
+      console.warn(`  ! ${wallet}: no screen entry for id "${id}"`)
+      return
+    }
+    lines.push(`- \`${id}\``)
+    lines.push(`  - ${RAW}/${folder}/${file}`)
+    lines.push(`  - ${SITE}/${folder}/${file}`)
+    total++
+  }
 
   for (const flow of data.flows || []) {
     lines.push(`### ${flow.name}`, '')
-    for (const file of flow.screens || []) {
-      inFlow.add(file)
-      lines.push(`- \`${file}\``)
-      lines.push(`  - ${RAW}/${folder}/${file}`)
-      lines.push(`  - ${SITE}/${folder}/${file}`)
-      total++
+    for (const id of flow.screens || []) {
+      inFlow.add(id)
+      entry(id)
     }
     lines.push('')
   }
 
-  const loose = (data.screens || []).map((s) => s.file).filter((f) => f && !inFlow.has(f))
+  const loose = (data.screens || []).map((s) => s.id).filter((id) => id && !inFlow.has(id))
   if (loose.length) {
     lines.push('### Not part of a defined flow', '')
-    for (const file of loose) {
-      lines.push(`- \`${file}\``)
-      lines.push(`  - ${RAW}/${folder}/${file}`)
-      lines.push(`  - ${SITE}/${folder}/${file}`)
-      total++
-    }
+    loose.forEach(entry)
     lines.push('')
   }
 }

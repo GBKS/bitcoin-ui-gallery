@@ -10,16 +10,17 @@
   },
   "flows": [
     {
+      "id": "seed-phrase-backup",
       "name": "Seed Phrase Backup",
       "screens": [
-        "main-wallet-screen-with-backup-prompt.png",
-        "enable-cloud-backup-password-creation.png",
-        "secure-wallet-backup-reminder-modal.png",
-        "wallet-backup-information-screen.png",
-        "things-to-remember-seed-phrase-warning-intro.png",
-        "things-to-remember-seed-phrase-sharing-warning.png",
-        "user-responsibility-acknowledgment-for-seed-phrase.png",
-        "note-it-down-seed-phrase-backup-screen.png"
+        "main-wallet-screen-with-backup-prompt",
+        "enable-cloud-backup-password-creation",
+        "secure-wallet-backup-reminder-modal",
+        "wallet-backup-information-screen",
+        "things-to-remember-seed-phrase-warning-intro",
+        "things-to-remember-seed-phrase-sharing-warning",
+        "user-responsibility-acknowledgment-for-seed-phrase",
+        "note-it-down-seed-phrase-backup-screen"
       ],
       "links": [
         {
@@ -35,10 +36,15 @@
   ],
   "screens": [
     {
-      "title": "Seed phrase wallet creation screen with wallet options",
+      "id": "seed-phrase-wallet-creation-screen-with-options",
       "file": "seed-phrase-wallet-creation-screen-with-options.png",
+      "title": "Seed phrase wallet creation screen with wallet options",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Onboarding", "Wallet Creation"],
+      "tags": [
+        "Onboarding",
+        "Wallet Creation"
+      ],
       "links": [
         {
           "label": "First use - Bitcoin Design Guide",
@@ -51,10 +57,15 @@
       ]
     },
     {
-      "title": "Main wallet screen with backup prompt",
+      "id": "main-wallet-screen-with-backup-prompt",
       "file": "main-wallet-screen-with-backup-prompt.png",
+      "title": "Main wallet screen with backup prompt",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Main Interface", "Backup"],
+      "tags": [
+        "Main Interface",
+        "Backup"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -63,10 +74,15 @@
       ]
     },
     {
-      "title": "Enable cloud backup password creation",
+      "id": "enable-cloud-backup-password-creation",
       "file": "enable-cloud-backup-password-creation.png",
+      "title": "Enable cloud backup password creation",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Security"],
+      "tags": [
+        "Backup",
+        "Security"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -75,10 +91,15 @@
       ]
     },
     {
-      "title": "Secure wallet backup reminder modal",
+      "id": "secure-wallet-backup-reminder-modal",
       "file": "secure-wallet-backup-reminder-modal.png",
+      "title": "Secure wallet backup reminder modal",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Security"],
+      "tags": [
+        "Backup",
+        "Security"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -87,10 +108,15 @@
       ]
     },
     {
-      "title": "Wallet backup information screen",
+      "id": "wallet-backup-information-screen",
       "file": "wallet-backup-information-screen.png",
+      "title": "Wallet backup information screen",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Education"],
+      "tags": [
+        "Backup",
+        "Education"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -99,10 +125,16 @@
       ]
     },
     {
-      "title": "Things to remember seed phrase warning intro",
+      "id": "things-to-remember-seed-phrase-warning-intro",
       "file": "things-to-remember-seed-phrase-warning-intro.png",
+      "title": "Things to remember seed phrase warning intro",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Education", "Security"],
+      "tags": [
+        "Backup",
+        "Education",
+        "Security"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -115,10 +147,16 @@
       ]
     },
     {
-      "title": "Things to remember seed phrase sharing warning",
+      "id": "things-to-remember-seed-phrase-sharing-warning",
       "file": "things-to-remember-seed-phrase-sharing-warning.png",
+      "title": "Things to remember seed phrase sharing warning",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Education", "Security"],
+      "tags": [
+        "Backup",
+        "Education",
+        "Security"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -131,10 +169,16 @@
       ]
     },
     {
-      "title": "User responsibility acknowledgment for seed phrase",
+      "id": "user-responsibility-acknowledgment-for-seed-phrase",
       "file": "user-responsibility-acknowledgment-for-seed-phrase.png",
+      "title": "User responsibility acknowledgment for seed phrase",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Education", "Security"],
+      "tags": [
+        "Backup",
+        "Education",
+        "Security"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -147,10 +191,15 @@
       ]
     },
     {
-      "title": "Note it down seed phrase backup screen",
+      "id": "note-it-down-seed-phrase-backup-screen",
       "file": "note-it-down-seed-phrase-backup-screen.png",
+      "title": "Note it down seed phrase backup screen",
+      "addedAt": "2025-10-27",
       "os": "iOS",
-      "tags": ["Backup", "Security"],
+      "tags": [
+        "Backup",
+        "Security"
+      ],
       "links": [
         {
           "label": "Backing up a wallet - Bitcoin Design Guide",
@@ -164,4 +213,3 @@
     }
   ]
 }
-

@@ -10,15 +10,32 @@ If you're running without filesystem write access — e.g. you fetched this skil
 
 ## Required frontmatter block
 
-```markdown
-- **Date:** 2026-08-17
-- **Wallet:** Muun
-- **Flow:** Onboarding
-- **Mode:** Persona walkthrough
-- **Persona (if applicable):** Priya — bitcoin-curious newcomer
-- **Screens reviewed:** [list screenshot filenames/identifiers actually used, from the Gallery data]
-- **Prior runs on this wallet+flow:** [reference log entries, or "none"]
+Real YAML frontmatter, first thing in the file, delimited by `---`. Not a bulleted list — the site parses this to index reports, so a malformed block means the report won't appear anywhere.
+
+```yaml
+---
+date: 2026-08-17
+wallet: muun                      # wallet id, matching app/data/<id>.json
+flow: onboarding                  # flow id from the wallet data file, not the display name
+mode: persona-walkthrough         # persona-walkthrough | copy-review | positioning-review
+persona: Priya                    # omit entirely if the mode doesn't use one
+screens:                          # ids of every screen actually examined, in flow order
+  - welcome-screen-with-wallet-creation-options
+  - pin-creation-screen-with-numeric-keypad
+findings: { high: 1, medium: 3, low: 2 }
+status: New                       # New | Recurring | Improved | Regressed
+priorReports:                     # filenames of earlier reports on this wallet+flow
+  - 2026-07-02-muun-onboarding-copy-review.md
+---
 ```
+
+Rules that matter for indexing:
+
+- `wallet` and `flow` are **ids** (`muun`, `onboarding`), not display titles (`Muun`, `Onboarding`). Ids are stable across renames; titles aren't, and a report keyed on a title silently orphans itself the day someone rewords a flow.
+- `screens` lists screen **ids** — the `id` field, not the filename. Filenames change when screenshots are re-captured; ids don't, which is what lets a later run compare its findings against yours.
+- List only what you actually looked at. If you examined four of a flow's five screens, list four and say why in "Gaps in this review" — don't copy the full list from the data file.
+- `findings` counts must equal the rows in your findings table by severity. They're what the site displays without opening the report.
+- Omit `persona` and `priorReports` when they don't apply. Don't emit them empty.
 
 ## Summary
 

@@ -9,16 +9,9 @@ Whole-wallet, not screen-by-screen. This mode asks what the wallet is *for* and 
 
 ## Before you start
 
-Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_shared/sources.md` if you haven't already this session.
+Read `../../_shared/personas.md`, `../../_shared/output-format.md`, and `../../_shared/sources.md` if you haven't already this session. Paths are relative to this file; see `../../_shared/remote-access.md` if you're running without the repo checked out.
 
-If you reached this file over HTTP rather than from disk, those relative paths won't resolve — and if your fetch tool only accepts URLs that appeared verbatim in an earlier result, you cannot build them by joining a base to a path either. Use these complete URLs:
-
-- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/personas.md
-- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/output-format.md
-- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/sources.md
-- https://raw.githubusercontent.com/GBKS/bitcoin-ui-gallery/main/skills/bitcoin-wallet-design-review/_shared/screen-urls.md
-
-If `raw.githubusercontent.com` is unreachable, the same files are at `https://github.com/GBKS/bitcoin-ui-gallery/blob/main/skills/bitcoin-wallet-design-review/_shared/personas.md` (content inside the HTML) and on `https://bitcoin-ui-gallery.netlify.app/skills/bitcoin-wallet-design-review/_shared/personas.md`. Try each before calling a file unreachable. If a file won't load, name it and stop rather than improvising its contents.
+If a file won't load, name it and stop rather than improvising its contents.
 
 You also need to be able to **see the screenshots** — the Gallery JSON carries only filenames and tags, no screen content. If your tools can't return image content, stop and say so rather than reviewing from memory of the app.
 

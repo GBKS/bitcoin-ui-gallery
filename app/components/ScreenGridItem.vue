@@ -37,9 +37,7 @@ const props = defineProps({
 const emit = defineEmits(['select']);
 
 const screenLink = computed(() => {
-	// Replace png and jpg extensions
-	const file = props.info.file.replace('.png', '').replace('.jpg', '');
-	return `/${props.info.project.id}/${file}`;
+	return `/${props.info.project.id}/${props.info.id}`;
 });
 
 function select(event) {
