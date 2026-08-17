@@ -145,17 +145,22 @@ const resolved = computed(() =>
 }
 
 .shots {
-	flex: 0 0 9rem;
+	flex: 0 0 auto;
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
 
 	figure {
 		margin: 0;
+		max-width: 9rem;
 	}
 
+	// Constrain the height, not the width — these are ~1:2.2 phone screenshots,
+	// so a fixed width makes them tower over the text beside them.
 	img {
-		width: 100%;
+		max-height: var(--report-shot-height, 11rem);
+		width: auto;
+		max-width: 100%;
 		height: auto;
 		display: block;
 		border-radius: 0.5rem;
@@ -187,8 +192,8 @@ const resolved = computed(() =>
 		flex-direction: row;
 		flex-wrap: wrap;
 
-		figure {
-			width: 7rem;
+		img {
+			max-height: var(--report-shot-height-narrow, 9rem);
 		}
 	}
 }
