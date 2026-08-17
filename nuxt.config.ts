@@ -1,9 +1,21 @@
+import { fileURLToPath } from 'node:url'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
   components: true, // Auto imports
+
+  // Serve the repo-root skills/ folder as static files at /skills/*
+  nitro: {
+    publicAssets: [
+      {
+        dir: fileURLToPath(new URL('./skills', import.meta.url)),
+        baseURL: '/skills'
+      }
+    ]
+  },
 
 	css: [
 		'@/assets/css/normalize.scss',
