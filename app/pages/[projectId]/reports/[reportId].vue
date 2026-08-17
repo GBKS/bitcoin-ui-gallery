@@ -23,7 +23,7 @@
 			</p>
 		</header>
 
-		<div class="report-body" v-html="report.html" />
+		<div class="report-body" v-html="body" />
 
 		<section v-if="screens.length" class="screens">
 			<h2>Screens reviewed</h2>
@@ -50,11 +50,19 @@ const route = useRoute()
 const store = useSiteStore()
 
 const projectId = route.params.projectId
-const report = store.getReport(projectId, route.params.reportId)
+const reportId = route.params.reportId
+const report = store.getReport(projectId, reportId)
 
 if (!report) {
 	throw createError({ statusCode: 404, statusMessage: 'Report not found', fatal: true })
 }
+
+// The rendered body lives in its own file so the index stays small — only this
+// page ever pulls it, and only for the one report being read.
+const { data: body } = await useAsyncData(`report-${reportId}`, async () => {
+	const mod = await import(`~/data/reports/${reportId}.json`)
+	return mod.default.html
+})
 
 // Resolve the frontmatter's screen ids to full screen objects for the strip below.
 const screens = (report?.screens || [])
