@@ -50,6 +50,11 @@ const html = computed(() =>
 
 	:deep(th) { white-space: nowrap; }
 
+	:deep(p) {
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+
 	:deep(blockquote) {
 		margin: 1rem 0;
 		padding-left: 1rem;

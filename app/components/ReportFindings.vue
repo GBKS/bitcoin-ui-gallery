@@ -150,8 +150,11 @@ const resolved = computed(() =>
 	flex-direction: column;
 	gap: 0.75rem;
 
+	// Cap the figure at the same width as the image so a long screen title wraps
+	// under it instead of stretching the column wider than the screenshot.
 	figure {
 		margin: 0;
+		max-width: var(--report-shot-width, 10rem);
 	}
 
 	img {
@@ -167,6 +170,7 @@ const resolved = computed(() =>
 		font-size: 0.75em;
 		opacity: 0.7;
 		margin-top: 0.3rem;
+		overflow-wrap: anywhere;
 	}
 }
 
@@ -187,6 +191,10 @@ const resolved = computed(() =>
 		flex: none;
 		flex-direction: row;
 		flex-wrap: wrap;
+
+		figure {
+			max-width: var(--report-shot-width-narrow, 8rem);
+		}
 
 		img {
 			max-width: var(--report-shot-width-narrow, 8rem);
