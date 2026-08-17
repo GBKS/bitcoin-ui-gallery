@@ -2,6 +2,8 @@
 
 Fixed set, reused across runs and modes so findings stay comparable over time. Don't invent new personas per run — if none of these fit a review, note that as a finding about the wallet's audience mismatch rather than switching personas.
 
+The site shows readers a one-line description of whichever persona a report used. That copy lives in `app/data/review-meta.json` and is the canonical reader-facing version — **don't restate a persona's description inside a report**, or two reports on the same persona will describe her differently. Add new personas to both files.
+
 ---
 
 ## Priya — bitcoin-curious newcomer

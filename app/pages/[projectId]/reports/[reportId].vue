@@ -17,6 +17,8 @@
 			</p>
 			<ReportFindingCounts :findings="report.findings" />
 
+			<ReportContext :mode="report.mode" :persona-name="report.persona" />
+
 			<p class="disclaimer">
 				Generated automatically and not manually verified. Findings quote the screens
 				they reference so they can be checked against the originals.

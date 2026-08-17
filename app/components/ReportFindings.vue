@@ -171,6 +171,7 @@ const resolved = computed(() =>
 		opacity: 0.7;
 		margin-top: 0.3rem;
 		overflow-wrap: anywhere;
+		text-align: center;
 	}
 }
 

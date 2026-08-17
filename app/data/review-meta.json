@@ -1,0 +1,39 @@
+{
+  "_comment": "Reader-facing descriptions of review modes and personas, shown on report pages. Canonical copy — the skill files under skills/bitcoin-wallet-design-review/ describe the same things for the agent running a review, but reports must not restate these in their own words or two reports on the same persona would describe her differently.",
+
+  "modes": {
+    "persona-walkthrough": {
+      "name": "Persona walkthrough",
+      "summary": "One persona moves through the flow screen by screen. Every finding is anchored to a specific screen where they would hesitate, misread, or stop — not to a general usability principle.",
+      "excludes": "Doesn't critique visual design or propose specific copy rewrites; those are separate review types."
+    },
+    "copy-review": {
+      "name": "Copy review",
+      "summary": "Judges only the words on screen — headings, button labels, error messages, terminology — for clarity and consistency, and proposes the replacement wording.",
+      "excludes": "Doesn't assess flow structure, step order, or who the wallet is for."
+    },
+    "positioning-review": {
+      "name": "Positioning review",
+      "summary": "Asks who the wallet appears built for and what it is betting people choose it for, judged from the product surface itself rather than its marketing.",
+      "excludes": "Doesn't examine step-by-step friction inside a flow, and makes no claims about the wallet's real user base."
+    }
+  },
+
+  "personas": {
+    "Priya": {
+      "name": "Priya",
+      "role": "Bitcoin-curious newcomer",
+      "summary": "Downloading her first wallet. Comfortable with banking apps, but \"seed phrase\", \"sats\" and \"Lightning\" mean nothing to her. Cautious, and worried about losing money or being scammed."
+    },
+    "Dave": {
+      "name": "Dave",
+      "role": "Self-custody veteran leaving an exchange",
+      "summary": "Years on a centralised exchange, but has never held his own keys. Knows the vocabulary, dislikes being over-explained to, and wants the wallet to prove that backup and recovery actually work."
+    },
+    "Marisol": {
+      "name": "Marisol",
+      "role": "Small merchant taking Lightning payments",
+      "summary": "Runs a shop and often has a customer waiting. Cares about fast invoices, a scannable QR code, and unambiguous confirmation that payment landed."
+    }
+  }
+}
